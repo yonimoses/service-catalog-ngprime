@@ -1,0 +1,10 @@
+<div class="matero-col" fxFlex="100" fxFlex.gt-sm="33"  fxFlex.gt-lg="33" fxFlex.gt-xs="33" fxFlex="100"
+       *ngFor="let stat of stats">
+    <mat-card [ngClass]="['text-white', stat.color]">
+      <mat-card-title class="f-s-12 f-w-100">{{stat.title}}</mat-card-title>
+      <mat-card-content>
+        <h2>{{stat.amount}}</h2>
+      </mat-card-content>
+    </mat-card>
+</div>
+

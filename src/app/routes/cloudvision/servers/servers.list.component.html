@@ -1,0 +1,106 @@
+<div class="card">
+  <p-table #dt2 [value]="entities" dataKey="hostname"
+           [rows]="10"
+           [showCurrentPageReport]="true"
+           [rowsPerPageOptions]="[10,25,50]"
+           [loading]="loading" styleClass="p-datatable-s"
+           [paginator]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+           [globalFilterFields]="getFilters()">
+    <ng-template pTemplate="caption">
+      <div class="p-d-flex">
+                <span class="p-input-icon-left p-ml-auto">
+                    <i class="pi pi-search"></i>
+                    <input pInputText type="text" (input)="dt2.filterGlobal($event.target.value, 'contains')"
+                           placeholder="Search keyword"/>
+                </span>
+      </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+
+
+      <tr>
+        <th pSortableColumn="hostname">Hostname
+          <p-sortIcon field="hostname"></p-sortIcon>
+        </th>
+        <th pSortableColumn="ipaddress">IP
+          <p-sortIcon field="ipaddress"></p-sortIcon>
+        </th>
+        <th pSortableColumn="group">Group
+          <p-sortIcon field="group"></p-sortIcon>
+        </th>
+        <th pSortableColumn="cpu">CPU
+          <p-sortIcon field="cpu"></p-sortIcon>
+        </th>
+        <th pSortableColumn="mem">Memory
+          <p-sortIcon field="mem"></p-sortIcon>
+        </th>
+        <th pSortableColumn="storage">Storage
+          <p-sortIcon field="storage"></p-sortIcon>
+        </th>
+
+        <!--        <th style="width: 6rem">Verified</th>-->
+      </tr>
+      <!--      <tr>-->
+      <!--        <th>-->
+      <!--          <p-columnFilter type="text" field="hostname"></p-columnFilter>-->
+      <!--        </th>-->
+      <!--        <th>-->
+      <!--          <p-columnFilter type="text" field="ipaddress"></p-columnFilter>-->
+      <!--        </th>-->
+      <!--        <th>-->
+      <!--          <p-columnFilter field="representative" matchMode="in" [showMenu]="false">-->
+      <!--            <ng-template pTemplate="filter" let-value let-filter="filterCallback">-->
+      <!--              <p-multiSelect [ngModel]="value" [options]="representatives" placeholder="Any" (onChange)="filter($event.value)" optionLabel="name">-->
+      <!--                <ng-template let-option pTemplate="item">-->
+      <!--                  <div class="p-multiselect-representative-option">-->
+      <!--&lt;!&ndash;                    <img [alt]="option.label" src="assets/showcase/images/demo/avatar/{{option.image}}" width="32" style="vertical-align: middle" />&ndash;&gt;-->
+      <!--                    <span class="p-ml-1">{{option.name}}</span>-->
+      <!--                  </div>-->
+      <!--                </ng-template>-->
+      <!--              </p-multiSelect>-->
+      <!--            </ng-template>-->
+      <!--          </p-columnFilter>-->
+      <!--        </th>-->
+      <!--        <th>-->
+      <!--          <p-columnFilter field="status" matchMode="equals" [showMenu]="false">-->
+      <!--            <ng-template pTemplate="filter" let-value let-filter="filterCallback">-->
+      <!--              <p-dropdown [ngModel]="value" [options]="statuses" (onChange)="filter($event.value)" placeholder="Any" [showClear]="true">-->
+      <!--                <ng-template let-option pTemplate="item">-->
+      <!--                  <span [class]="'customer-badge status-' + option.value">{{option.label}}</span>-->
+      <!--                </ng-template>-->
+      <!--              </p-dropdown>-->
+      <!--            </ng-template>-->
+      <!--          </p-columnFilter>-->
+      <!--        </th>-->
+      <!--        <th>-->
+      <!--          <p-columnFilter type="boolean" field="verified"></p-columnFilter>-->
+      <!--        </th>-->
+      <!--      </tr>-->
+    </ng-template>
+    <ng-template pTemplate="body" let-entity>
+      <tr>
+        <td>
+          {{entity.hostname}}
+        </td>
+        <td>
+          {{entity.ipaddress}}
+        </td>
+        <td><span class="entities-list-badge" [ngClass]="entity.group.toLowerCase()">{{entity.group}}</span></td>
+        <td><span class="entities-list-badge cpu">{{entity.cpu}}</span></td>
+        <td><span class="entities-list-badge memory">{{entity.mem}}</span></td>
+        <td><span class="entities-list-badge storage">{{entity.storage}}</span></td>
+
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="emptymessage">
+      <tr>
+        <td colspan="6">No entities found.</td>
+      </tr>
+    </ng-template>
+    <!-- @TODO add cpu/mem/storage summary for the selected entitys -->
+    <!--    <ng-template pTemplate="summary">-->
+    <!--          {{cpu}}-->
+    <!--          found {{entitys?.length}} entitys-->
+    <!--    </ng-template>-->
+  </p-table>
+</div>

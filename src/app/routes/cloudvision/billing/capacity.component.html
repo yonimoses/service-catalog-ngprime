@@ -1,0 +1,18 @@
+<breadcrumb></breadcrumb>
+
+<div class="matero-row" fxLayout="row wrap">
+  <div class="matero-col" fxFlex="100">
+    <ng-template *ngIf="loading; else loaded">
+      <p-progressSpinner></p-progressSpinner>
+    </ng-template>
+    <ng-template #loaded>
+<!--      <app-capacity-stats-component [loading]="loading" [entities]="entities"></app-capacity-stats-component>-->
+    </ng-template>
+  </div>
+
+<!--  <div class="matero-row" fxLayout="row wrap">-->
+    <div class="matero-col" fxFlex="100">
+      <app-capacity-entity-list-component [loading]="loading" [entities]="entities"></app-capacity-entity-list-component>
+    </div>
+    </div>
+<!--  </div>-->

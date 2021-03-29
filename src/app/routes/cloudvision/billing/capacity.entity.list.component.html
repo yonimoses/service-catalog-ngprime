@@ -1,0 +1,102 @@
+<div class="card">
+  <h5>Aris in greenfield</h5>
+  <div class="p-mb-3">
+    <p-button type="button" icon="pi pi-chevron-left" (click)="prev()" [disabled]="isFirstPage()"
+              styleClass="p-button-text"></p-button>
+    <p-button type="button" icon="pi pi-refresh" (click)="reset()" styleClass="p-button-text"></p-button>
+    <p-button type="button" icon="pi pi-chevron-right" (click)="next()" [disabled]="isLastPage()"
+              styleClass="p-button-text"></p-button>
+    <p-button type="button" icon="pi pi-chevron-right" (click)="next()"
+              styleClass="p-button-text">Show cost</p-button>
+  </div>
+  <p-table #dt2 [value]="entities" dataKey="aris"
+           [rows]="10"
+           [showCurrentPageReport]="true"
+           [rowsPerPageOptions]="[10,25,50]"
+           [loading]="loading" styleClass="p-datatable-s"
+           [paginator]="true"
+           currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entities"
+           [globalFilterFields]="getFilters()">
+
+    <ng-template pTemplate="caption">
+      <div class="p-d-flex">
+                <span class="p-input-icon-left p-ml-auto">
+                    <i class="pi pi-search"></i>
+                    <input pInputText type="text" (input)="dt2.filterGlobal($event.target.value, 'contains')"
+                           placeholder="Search keyword"/>
+                </span>
+      </div>
+    </ng-template>
+
+    <ng-template pTemplate="header">
+      <tr>
+        <th style="width: 3rem"></th>
+        <th pSortableColumn="aris">Aris
+          <p-sortIcon field="aris"></p-sortIcon>
+        </th>
+        <th pSortableColumn="code">Code
+          <p-sortIcon field="code"></p-sortIcon>
+        </th>
+        <th pSortableColumn="title">Title
+          <p-sortIcon field="title"></p-sortIcon>
+        </th>
+        <th pSortableColumn="owner">Owner
+          <p-sortIcon field="owner"></p-sortIcon>
+        </th>
+        <th># Namespaces</th>
+        <th># Deployments</th>
+        <th>Actions</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-entity let-expanded="expanded">
+      <tr>
+        <td>
+          <button type="button" pButton pRipple [pRowToggler]="entity"
+                  class="p-button-text p-button-rounded p-button-plain"
+                  [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></button>
+        </td>
+        <td>{{entity.aris}}</td>
+        <td>{{entity.code}}</td>
+        <td>{{entity.title}}</td>
+        <td> {{entity.owner_name}} <a [attr.href]="'mailto:' + entity.owner_email">
+          <i class="pi pi-envelope"></i></a></td>
+        <td><span class="entities-list-badge names">{{entity.service_domains.names | length}}</span></td>
+        <td><span class="entities-list-badge deployments">{{entity.service_domains?.deployments | length}}</span></td>
+        <td>
+          <button type="button" pButton pRipple [pRowToggler]="entity"
+                  [matTooltip]="'Show service usage'"
+                  class="p-button-text p-button-rounded text-white p-button-plain"
+                  [icon]="'pi pi-heart'"></button>
+
+          <button pButton
+                pRipple
+                type="button"
+                [matTooltip]="'Go to pricing'"
+                (click)="goToPricing(entity)"
+                icon="pi pi-dollar"
+                class="p-button-text p-button-rounded text-white p-button-plain"></button>
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="emptymessage">
+      <tr>
+        <td colspan="8">No Entity found.</td>
+      </tr>
+    </ng-template>
+
+    <ng-template pTemplate="rowexpansion" let-entity>
+      <tr>
+        <td colspan="8">
+          <app-capacity-stats-component [loading]="false" [entities]="[entity]"></app-capacity-stats-component>
+        </td>
+      </tr>
+    </ng-template>
+
+
+    <!-- @TODO add cpu/mem/storage summary for the selected servers -->
+    <!--    <ng-template pTemplate="summary">-->
+    <!--          {{cpu}}-->
+    <!--          found {{servers?.length}} servers-->
+    <!--    </ng-template>-->
+  </p-table>
+</div>
