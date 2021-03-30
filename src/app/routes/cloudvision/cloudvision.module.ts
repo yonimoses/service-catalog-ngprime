@@ -25,6 +25,7 @@ import {ServiceDomainsStatsComponent} from './servicedmain/service-domains.stats
 import {ServiceDomainsEntityListComponent} from './servicedmain/service-domains.entity.list.component';
 import {ArisRowInfoComponent} from './billing/aris.row.info.component';
 import {ServiceDomainRowInfoComponent} from './servicedmain/service-domain.row.info.component';
+import {ServiceDomainClustersCardComponent} from './servicedmain/cards/service-domain.clusters.card.component';
 
 const COMPONENTS = [
   ServersListComponent,
@@ -33,6 +34,7 @@ const COMPONENTS = [
   ServiceDomainsEntityListComponent,
   ServiceDomainsComponent,
   ArisRowInfoComponent,
+  ServiceDomainClustersCardComponent,
   ServiceDomainRowInfoComponent,
   ArisStatsComponent,
   ArisEntityListComponent,

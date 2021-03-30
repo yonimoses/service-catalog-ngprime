@@ -1,0 +1,43 @@
+<section>
+  <h2>Clusters</h2>
+  <mat-list role="list">
+    <mat-list-item role="listitem" *ngFor="let cluster of entity.clusters">
+      <img class="card-list-icon" mat-list-avatar src="assets/images/logos/ocp.svg" [alt]="cluster">
+      <h3 mat-line> <a href="{{cluster}}"> {{cluster}} </a></h3>
+<!--      <p mat-line class="demo-secondary-text"> {{cluster}} </p>-->
+    </mat-list-item>
+  </mat-list>
+</section>
+<!--&lt;!&ndash;{{entity.clusters | json}}&ndash;&gt;-->
+<div class="card-list-wrapper card card-w-title">
+  <h5>card-list-wrapper</h5>
+  <ul>
+    <li>
+      <i class="pi pi-image"></i>
+      <span class="card-list-wrapper-event-title">Uploaded Images</span>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <div class="p-grid">
+        <div class="p-col-6">
+          <img class="card-list-icon" mat-list-avatar src="assets/images/logos/ocp.svg" [alt]="'asd'">
+        </div>
+      </div>
+    </li>
+    <li>
+      <i class="pi pi-heart"></i>
+      <span class="card-list-wrapper-event-title">Favorites</span>
+      <span class="card-list-wrapper-event-time">1h</span>
+    </li>
+    <li>
+      <i class="pi pi-users"></i>
+      <span class="card-list-wrapper-event-title">Meeting</span>
+      <span class="card-list-wrapper-event-time">2h</span>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+    </li>
+    <li>
+      <i class="pi pi-money-bill"></i>
+      <span class="card-list-wrapper-event-title">Payment Received</span>
+      <span class="card-list-wrapper-event-time">3h</span>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+    </li>
+  </ul>
+</div>

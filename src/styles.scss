@@ -5,3 +5,51 @@
 @import 'styles/grid';
 @import 'styles/helpers';
 @import 'styles/plugins';
+
+.p-datatable .p-sortable-column:not(.p-highlight):hover {
+  background: none !important;
+}
+
+.p-datatable .p-sortable-column.p-highlight:hover {
+  background: none !important;
+}
+
+.card-list-icon {
+  width: 20px;
+  height: 20px;
+}
+.p-tooltip {
+  background: #424242;
+
+}
+.p-paginator {
+  background: #424242;
+}
+.p-paginator .p-paginator-current {
+  //color: bg-orange-500;
+}
+//.p-component, .p-component * {
+//  background: #424242;
+//}
+
+
+.p-datatable .p-datatable-tbody > tr > td{
+  background: #424242;
+}
+.p-datatable-tbody {
+  background: #424242;
+}
+.p-datatable .p-datatable-thead > tr > th {
+  //border: 1px solid #838d9a;
+  background: #424242;
+}
+
+.p-datatable .p-datatable-header {
+  background: #424242 !important;
+}
+.p-datatable .p-datatable-footer {
+  background: #424242  !important;
+}
+.p-datatable .p-datatable-thead > tr > th {
+  background: #424242  !important;
+}

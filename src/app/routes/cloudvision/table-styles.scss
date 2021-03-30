@@ -7,9 +7,117 @@
   letter-spacing: .3px;
 }
 
-.p-datatable .p-sortable-column:not(.p-highlight):hover{
+.p-datatable .p-sortable-column:not(.p-highlight):hover {
   background: none !important;
 }
+
 .p-datatable .p-sortable-column.p-highlight:hover {
   background: none !important;
+}
+
+.card-list-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.p-component, .p-component * {
+  background: #424242;
+}
+.p-datatable .p-datatable-thead > tr > th {
+  border: 1px solid #838d9a;
+  background: #424242;
+}
+
+.p-datatable .p-datatable-header {
+  background: #424242 !important;
+}
+.p-datatable .p-datatable-footer {
+  background: #424242  !important;
+}
+.p-datatable .p-datatable-thead > tr > th {
+  background: #424242  !important;
+}
+
+.card-list-wrapper {
+  border-radius: 2px;
+  background: #ffffff;
+  padding: 1rem;
+  box-sizing: border-box;
+  -webkit-box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.08);
+  -moz-box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.08);
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  margin-bottom: 1rem;
+}
+
+//.card:last-child {
+//  margin-bottom: 0;
+//}
+
+//.card-list-wrapper {
+//  min-height: 495px;
+//}
+
+.card-list-wrapper ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.card-list-wrapper ul .card-list-wrapper-event-title {
+  vertical-align: middle;
+  font-weight: 500;
+}
+
+.card-list-wrapper ul .card-list-wrapper-event-time {
+  background-color: #ebebef;
+  padding: .25em;
+  vertical-align: middle;
+  margin-left: 1em;
+  display: inline-block;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+}
+
+.card-list-wrapper ul img {
+  width: 100%;
+}
+
+.card-list-wrapper ul li {
+  border-bottom: 1px solid #ebebef;
+  padding: 1em;
+}
+
+.card-list-wrapper ul li i {
+  font-size: 24px;
+  margin-right: .25em;
+  vertical-align: middle;
+}
+
+.card-list-wrapper ul li:nth-child(1) i {
+  color: #0f97c7;
+}
+
+.card-list-wrapper ul li:nth-child(2) i {
+  color: #1cb9d7;
+}
+
+.card-list-wrapper ul li:nth-child(3) i {
+  color: #f56f64;
+}
+
+.card-list-wrapper ul li:nth-child(4) i {
+  color: #9643F9;
+}
+
+.card-list-wrapper ul li:last-child {
+  border-bottom: 0 none;
+}
+
+.card-list-wrapper ul p {
+  color: #65686a;
+  margin: .5em 0;
 }
