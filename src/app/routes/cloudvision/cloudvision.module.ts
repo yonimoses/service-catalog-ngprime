@@ -10,18 +10,33 @@ import { ServersComponent } from './servers/servers.component';
 import { ServersStatsComponent } from './servers/servers.stats.component';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { CapacityComponent } from './billing/capacity.component';
-import { CapacityEntityListComponent } from './billing/capacity.entity.list.component';
+import { ArisEntityListComponent } from './billing/aris.entity.list.component';
 import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
-import { CapacityStatsComponent } from './billing/capacity.stats.component';
-import { EntityBillingComponent } from './billing/entity.billing.component';
+import { ArisStatsComponent } from './billing/aris.stats.component';
+import { ArisCostComponent } from './billing/aris.cost.component';
 import { SplitterModule } from 'primeng/splitter';
+import {ToolbarModule} from 'primeng/toolbar';
+import {TooltipModule} from 'primeng/tooltip';
+import {TableCaptionComponent} from './fragments/table.caption.component';
+import {OrderListModule} from 'primeng/orderlist';
+import {ServiceDomainsComponent} from './servicedmain/service-domains.component';
+import {ServiceDomainsStatsComponent} from './servicedmain/service-domains.stats.component';
+import {ServiceDomainsEntityListComponent} from './servicedmain/service-domains.entity.list.component';
+import {ArisRowInfoComponent} from './billing/aris.row.info.component';
+import {ServiceDomainRowInfoComponent} from './servicedmain/service-domain.row.info.component';
 
 const COMPONENTS = [
   ServersListComponent,
-  EntityBillingComponent,
-  CapacityStatsComponent,
-  CapacityEntityListComponent,
+  ArisCostComponent,
+  ServiceDomainsStatsComponent,
+  ServiceDomainsEntityListComponent,
+  ServiceDomainsComponent,
+  ArisRowInfoComponent,
+  ServiceDomainRowInfoComponent,
+  ArisStatsComponent,
+  ArisEntityListComponent,
+  TableCaptionComponent,
   ServersStatsComponent,
   ServersComponent,
   CapacityComponent,
@@ -40,6 +55,9 @@ const COMPONENTS_DYNAMIC = [];
     ButtonModule,
     RippleModule,
     SplitterModule,
+    ToolbarModule,
+    TooltipModule,
+    OrderListModule,
   ],
   declarations: [...COMPONENTS, ...COMPONENTS_DYNAMIC],
   entryComponents: COMPONENTS_DYNAMIC,

@@ -23,6 +23,7 @@ import { DisableControlDirective } from './directives/disable-control.directive'
 
 import { SafeUrlPipe } from './pipes/safe-url.pipe';
 import { ToObservablePipe } from './pipes/to-observable.pipe';
+import {ArrayLength} from '@shared/pipes/array.length';
 
 const MODULES = [
   MaterialModule,
@@ -40,7 +41,7 @@ const MODULES = [
 const COMPONENTS = [BreadcrumbComponent, PageHeaderComponent, ErrorCodeComponent];
 const COMPONENTS_DYNAMIC = [];
 const DIRECTIVES = [DisableControlDirective];
-const PIPES = [SafeUrlPipe, ToObservablePipe];
+const PIPES = [SafeUrlPipe, ArrayLength,ToObservablePipe];
 
 @NgModule({
   declarations: [...COMPONENTS, ...COMPONENTS_DYNAMIC, ...DIRECTIVES, ...PIPES],

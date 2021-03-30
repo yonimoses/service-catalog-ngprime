@@ -28,6 +28,11 @@ const routes: Routes = [
         data: { title: 'Design', titleI18n: 'design' },
       },
       {
+        path: 'cloudvision',
+        loadChildren: () => import('./cloudvision/cloudvision.module').then(m => m.CloudvisionModule),
+        data: { title: 'cloudvision', titleI18n: 'cloudvision' },
+      },
+      {
         path: 'material',
         loadChildren: () => import('./material/material.module').then(m => m.MaterialModule),
         data: { title: 'Material', titleI18n: 'material' },

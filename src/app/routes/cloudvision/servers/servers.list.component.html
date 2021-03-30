@@ -1,4 +1,28 @@
 <div class="card">
+  <h3>DevOps infrastructure, by CloudVision</h3>
+</div>
+<div class="card">
+  <style>
+    .p-sortable-column:hover {
+      background: none !important;
+    }
+  </style>
+
+  <!--  <p-toolbar styleClass="p-mb-4">-->
+  <!--    <ng-template pTemplate="left">-->
+  <!--&lt;!&ndash;      <button pButton pRipple label="New" icon="pi pi-plus" class="p-button-success p-mr-2" (click)="openNew()"></button>&ndash;&gt;-->
+  <!--&lt;!&ndash;      <button pButton pRipple [label]="Delete" icon="pi pi-trash" class="p-button-danger" (click)="deleteSelectedProducts()" [disabled]="!selectedProducts || !selectedProducts.length"></button>&ndash;&gt;-->
+  <!--    </ng-template>-->
+
+  <!--    <ng-template pTemplate="right">-->
+  <!--      <button type="button" pButton pRipple icon="pi pi-file-o"  (click)="dt2.exportCSV()" class="p-mr-2" pTooltip="Export to CSV"-->
+  <!--              tooltipPosition="bottom"></button> &nbsp;-->
+  <!--      <button type="button" pButton pRipple icon="pi pi-file-excel" (click)="exportExcel()"-->
+  <!--              class="p-button-success p-mr-2"  pTooltip="Export to XLS" tooltipPosition="bottom"></button> &nbsp;-->
+  <!--    </ng-template>-->
+  <!--  </p-toolbar>-->
+
+
   <p-table #dt2 [value]="entities" dataKey="hostname"
            [rows]="10"
            [showCurrentPageReport]="true"
@@ -7,17 +31,17 @@
            [paginator]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
            [globalFilterFields]="getFilters()">
     <ng-template pTemplate="caption">
-      <div class="p-d-flex">
-                <span class="p-input-icon-left p-ml-auto">
-                    <i class="pi pi-search"></i>
-                    <input pInputText type="text" (input)="dt2.filterGlobal($event.target.value, 'contains')"
-                           placeholder="Search keyword"/>
-                </span>
-      </div>
+      <app-table-caption-component [entities]="entities"
+                                   [showExport]="false"
+                                   [table]="dt2"
+                                   (navChanged)="navChanged($event)"
+                                   (exportChanged)="exportChanged($event)"
+                                   [showNavigation]="true"
+                                   [showSearch]="true">
+      </app-table-caption-component>
     </ng-template>
+
     <ng-template pTemplate="header">
-
-
       <tr>
         <th pSortableColumn="hostname">Hostname
           <p-sortIcon field="hostname"></p-sortIcon>
@@ -37,45 +61,7 @@
         <th pSortableColumn="storage">Storage
           <p-sortIcon field="storage"></p-sortIcon>
         </th>
-
-        <!--        <th style="width: 6rem">Verified</th>-->
       </tr>
-      <!--      <tr>-->
-      <!--        <th>-->
-      <!--          <p-columnFilter type="text" field="hostname"></p-columnFilter>-->
-      <!--        </th>-->
-      <!--        <th>-->
-      <!--          <p-columnFilter type="text" field="ipaddress"></p-columnFilter>-->
-      <!--        </th>-->
-      <!--        <th>-->
-      <!--          <p-columnFilter field="representative" matchMode="in" [showMenu]="false">-->
-      <!--            <ng-template pTemplate="filter" let-value let-filter="filterCallback">-->
-      <!--              <p-multiSelect [ngModel]="value" [options]="representatives" placeholder="Any" (onChange)="filter($event.value)" optionLabel="name">-->
-      <!--                <ng-template let-option pTemplate="item">-->
-      <!--                  <div class="p-multiselect-representative-option">-->
-      <!--&lt;!&ndash;                    <img [alt]="option.label" src="assets/showcase/images/demo/avatar/{{option.image}}" width="32" style="vertical-align: middle" />&ndash;&gt;-->
-      <!--                    <span class="p-ml-1">{{option.name}}</span>-->
-      <!--                  </div>-->
-      <!--                </ng-template>-->
-      <!--              </p-multiSelect>-->
-      <!--            </ng-template>-->
-      <!--          </p-columnFilter>-->
-      <!--        </th>-->
-      <!--        <th>-->
-      <!--          <p-columnFilter field="status" matchMode="equals" [showMenu]="false">-->
-      <!--            <ng-template pTemplate="filter" let-value let-filter="filterCallback">-->
-      <!--              <p-dropdown [ngModel]="value" [options]="statuses" (onChange)="filter($event.value)" placeholder="Any" [showClear]="true">-->
-      <!--                <ng-template let-option pTemplate="item">-->
-      <!--                  <span [class]="'customer-badge status-' + option.value">{{option.label}}</span>-->
-      <!--                </ng-template>-->
-      <!--              </p-dropdown>-->
-      <!--            </ng-template>-->
-      <!--          </p-columnFilter>-->
-      <!--        </th>-->
-      <!--        <th>-->
-      <!--          <p-columnFilter type="boolean" field="verified"></p-columnFilter>-->
-      <!--        </th>-->
-      <!--      </tr>-->
     </ng-template>
     <ng-template pTemplate="body" let-entity>
       <tr>
@@ -89,7 +75,6 @@
         <td><span class="entities-list-badge cpu">{{entity.cpu}}</span></td>
         <td><span class="entities-list-badge memory">{{entity.mem}}</span></td>
         <td><span class="entities-list-badge storage">{{entity.storage}}</span></td>
-
       </tr>
     </ng-template>
     <ng-template pTemplate="emptymessage">
@@ -98,9 +83,8 @@
       </tr>
     </ng-template>
     <!-- @TODO add cpu/mem/storage summary for the selected entitys -->
-    <!--    <ng-template pTemplate="summary">-->
-    <!--          {{cpu}}-->
-    <!--          found {{entitys?.length}} entitys-->
-    <!--    </ng-template>-->
+<!--    <ng-template pTemplate="summary">-->
+<!--      found {{entities?.length}} entities-->
+<!--    </ng-template>-->
   </p-table>
 </div>

@@ -8,7 +8,9 @@
   color: white;
 }
 
-
 .p-datatable .p-sortable-column.p-highlight:hover {
+  background: none !important;
+}
+.p-datatable .p-sortable-column:not(.p-highlight):hover{
   background: none !important;
 }

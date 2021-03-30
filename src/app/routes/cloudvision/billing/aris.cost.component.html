@@ -1,28 +1,69 @@
 <!--<breadcrumb></breadcrumb>-->
 <div *ngIf="!loading" class="matero-row" fxLayout="row wrap">
-<!--  <div class="matero-col" fxFlex="100" fxFlex.gt-sm="33" fxFlex.gt-lg="33" fxFlex.gt-xs="33" fxFlex="100"-->
-<!--       *ngFor="let stat of entity.usage">-->
-<!--    <mat-card [ngClass]="['text-white', stat.color]">-->
-<!--      <mat-card-title class="f-s-12 f-w-100">{{stat.title}}</mat-card-title>-->
-<!--      <mat-card-content>-->
-<!--        <h2>{{stat.amount}}</h2>-->
-<!--      </mat-card-content>-->
-<!--    </mat-card>-->
-<!--  </div>-->
-</div>
-<mat-card class="mat-elevation-z5">
-  <mat-card-header>
-    <mat-card-title>London's weather</mat-card-title>
-    <mat-card-subtitle>Today: July 10, 2020</mat-card-subtitle>
-  </mat-card-header>
-  <mat-card-content>
 
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-button>LIKE</button>
-    <button mat-button>SHARE</button>
-  </mat-card-actions>
-</mat-card>
+  <mat-card [ngClass]="['text-white', 'bg-green-500']" style="width: 100%; display: flex;
+  justify-content: center;
+  align-items: center;">
+    <mat-card-title class="f-s-14 f-w-300">
+      <h1 style="font-size: 3em">{{total}}<i class="pi pi-dollar" style="font-size: 2rem"></i></h1>
+    </mat-card-title>
+    <mat-card-content>
+      <h5>Price is calculated based on the table below and for all greenfield services</h5>
+<!--      <mat-card-subtitle class="text-white"> <small class="text-muted"><a href="mailto:cloudvision@poalim.co.il">Drop us an email about it</a></small></mat-card-subtitle>-->
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<div *ngIf="!loading" class="matero-row" fxLayout="row wrap">
+  <div class="card">
+    <h3>Cost of aris  {{arisCost.arisCode}} {{arisCost.arisName}}. Currently owned by {{arisCost.arisOwner}}</h3>
+  </div>
+  <div class="card">
+  <p-table #dt2 [value]="entities">
+    <ng-template pTemplate="caption">
+      <app-table-caption-component [entities]="entities"
+                                   [showExport]="true"
+                                   [table]="dt2"
+                                   (exportChanged)="exportChanged($event)"
+                                   [showNavigation]="false"
+                                   [showSearch]="false">
+      </app-table-caption-component>
+    </ng-template>
+
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Name</th>
+        <th>Unit</th>
+        <th>Quantity</th>
+        <th>Price Per Unit</th>
+        <th>Total</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-cost>
+      <tr>
+        <td>{{cost.prettyName}}</td>
+        <td>{{cost.help}}</td>
+        <td>{{cost.quantity}}</td>
+        <td>{{cost.pricePerUnit}}</td>
+        <td>{{cost.total}}</td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="summary">
+
+    </ng-template>
+  </p-table>
+  </div>
+</div>
+
+<!--<p-orderList [value]="entities" controlsPosition="none">-->
+<!--  <ng-template let-cost pTemplate="item">-->
+<!--    <div>-->
+<!--      {{cost | json}}-->
+<!--&lt;!&ndash;      <img src="assets/showcase/images/demo/car/{{car.brand}}.png" style="display:inline-block;margin:2px 0 2px 2px" width="48">&ndash;&gt;-->
+<!--&lt;!&ndash;      <div style="font-size:14px;float:right;margin:15px 5px 0 0">{{car.brand}} - {{car.year}} - {{car.color}}</div>&ndash;&gt;-->
+<!--    </div>-->
+<!--  </ng-template>-->
+<!--</p-orderList>-->
 
 <!--<div class="matero-row" fxLayout="row wrap">-->
 <!--  <p-splitter [style]="{'height': '300px'}" [minSizes]="[10,20]" layout="vertical">-->

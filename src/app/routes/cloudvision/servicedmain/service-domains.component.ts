@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Table } from 'primeng/table';
 import { HttpClient } from '@angular/common/http';
 import { AbstractTableDataFetcher } from '../abstract.table.data.fetcher';
-import Server from '../entities';
-import {URL_SERVER_LIST} from '../consts';
+import ServiceDomain from '../entities';
+import {URL_SERVER_LIST, URL_SERVER_SERVICE_DOMAIN} from '../consts';
 
 // import * as data from 'customers.json';
 
@@ -12,14 +12,14 @@ import {URL_SERVER_LIST} from '../consts';
  * @title Basic use of `<table mat-table>`
  */
 @Component({
-  selector: 'servers-component',
-  styleUrls: ['../table-styles.scss', 'servers.list.component.scss'],
-  templateUrl: 'servers.component.html',
+  selector: 'service-domains-component',
+  styleUrls: ['../table-styles.scss'],
+  templateUrl: 'service-domains.component.html',
 })
-export class ServersComponent extends AbstractTableDataFetcher<Server> {
+export class ServiceDomainsComponent extends AbstractTableDataFetcher<ServiceDomain> {
   constructor(httpClient: HttpClient) {
     super(httpClient);
-    console.log('ServersComponent ');
+    console.log('ServiceDomainsComponent ');
   }
 
   clear(table: Table) {
@@ -27,6 +27,6 @@ export class ServersComponent extends AbstractTableDataFetcher<Server> {
   }
 
   public getUrl(): string {
-    return URL_SERVER_LIST;
+    return URL_SERVER_SERVICE_DOMAIN;
   }
 }

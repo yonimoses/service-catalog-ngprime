@@ -29,6 +29,29 @@
       ]
     },
     {
+      "route": "cloudvision",
+      "name": "cloudvision",
+      "type": "sub",
+      "icon": "color_lens",
+      "children": [
+        {
+          "route": "servers",
+          "name": "servers",
+          "type": "link"
+        },
+        {
+          "route": "capacity",
+          "name": "capacity",
+          "type": "link"
+        },
+        {
+          "route": "service-domains",
+          "name": "service-domains",
+          "type": "link"
+        }
+      ]
+    },
+    {
       "route": "material",
       "name": "material",
       "type": "sub",

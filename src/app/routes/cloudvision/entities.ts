@@ -1,5 +1,43 @@
 export interface TableRow {}
 
+
+export interface Envs {
+  dev: any[];
+  prod: any[];
+  preprod: any[];
+  staging: any[];
+}
+
+export interface Links {
+  grafana: string[];
+  bitbucket: string[];
+  jira: any[];
+  sonarqube: any[];
+  ocp: string[];
+}
+
+export interface ServiceDomain {
+  domain_name: string;
+  domain_repo_name: string;
+  group_email: string;
+  owner_email: string;
+  owner_name?: any;
+  system_aris: number;
+  system_name_aris: string;
+  repos: string[];
+  groups: string[];
+  source_project: string;
+  source_address: string;
+  projects: string[];
+  system_aris_description: string;
+  system_aris_title: string;
+  envs: Envs;
+  namespaces: string[];
+  clusters: string[];
+  links: Links;
+}
+
+
 export default interface Server extends TableRow {
   hostname: string;
   ipaddress: string;
@@ -11,8 +49,8 @@ export default interface Server extends TableRow {
 }
 
 export interface ServiceDomains {
+  namespaces: string[];
   names: string[];
-  deployments: string[];
 }
 
 export interface Usage {
@@ -26,7 +64,7 @@ export interface Usage {
   openshift_storage: number;
 }
 
-export default interface CapacityEntity extends TableRow {
+export default interface ArisUsageEntity extends TableRow {
   aris: string;
   name: string;
   owner_email: string;

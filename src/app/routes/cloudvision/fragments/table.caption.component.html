@@ -1,0 +1,26 @@
+<div fxLayout="row wrap" fxLayoutGap="8px grid">
+  <div fxFlex="50" fxFlex.lt-lg="100">
+    <p-button *ngIf="showNavigation" type="button" pTooltip="Previous page" icon="pi pi-chevron-left" (click)="prev()"
+              tooltipPosition="bottom" [disabled]="isFirstPage()"
+              styleClass="p-button-text"></p-button>
+    <p-button *ngIf="showNavigation" type="button" pTooltip="Reset" icon="pi pi-refresh" (click)="reset()"
+              tooltipPosition="bottom" styleClass="p-button-text"></p-button>
+    <p-button *ngIf="showNavigation" type="button" pTooltip="Next page" icon="pi pi-chevron-right" (click)="next()"
+              tooltipPosition="bottom" [disabled]="isLastPage()"
+              styleClass="p-button-text"></p-button> &nbsp;
+    <span *ngIf="showSearch" class="p-input-icon-left p-ml-auto">
+            <i class="pi pi-search"></i>
+            <input pInputText type="text" (input)="table.filterGlobal($event.target.value, 'contains')"
+                   placeholder="Search keyword"/>
+      </span>&nbsp;
+  </div>
+  <div fxFlex="50" fxFlex.lt-lg="100" style="text-align: right">
+    <button *ngIf="showExport" type="button" pButton pRipple icon="pi pi-file-o" (click)="table.exportCSV()"
+            class="p-mr-2"
+            pTooltip="Export to CSV"
+            tooltipPosition="bottom"></button> &nbsp;
+    <button *ngIf="showExport" type="button" pButton pRipple icon="pi pi-file-excel" (click)="exportExcel()"
+            class="p-button-success p-mr-2" pTooltip="Export to XLS" tooltipPosition="bottom"></button> &nbsp;
+  </div>
+</div>
+

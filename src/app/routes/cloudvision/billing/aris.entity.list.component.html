@@ -1,14 +1,7 @@
 <div class="card">
-  <h5>Aris in greenfield</h5>
-  <div class="p-mb-3">
-    <p-button type="button" icon="pi pi-chevron-left" (click)="prev()" [disabled]="isFirstPage()"
-              styleClass="p-button-text"></p-button>
-    <p-button type="button" icon="pi pi-refresh" (click)="reset()" styleClass="p-button-text"></p-button>
-    <p-button type="button" icon="pi pi-chevron-right" (click)="next()" [disabled]="isLastPage()"
-              styleClass="p-button-text"></p-button>
-    <p-button type="button" icon="pi pi-chevron-right" (click)="next()"
-              styleClass="p-button-text">Show cost</p-button>
-  </div>
+  <h3>Aris projects, greenfield powered</h3>
+</div>
+<div class="card">
   <p-table #dt2 [value]="entities" dataKey="aris"
            [rows]="10"
            [showCurrentPageReport]="true"
@@ -19,13 +12,14 @@
            [globalFilterFields]="getFilters()">
 
     <ng-template pTemplate="caption">
-      <div class="p-d-flex">
-                <span class="p-input-icon-left p-ml-auto">
-                    <i class="pi pi-search"></i>
-                    <input pInputText type="text" (input)="dt2.filterGlobal($event.target.value, 'contains')"
-                           placeholder="Search keyword"/>
-                </span>
-      </div>
+      <app-table-caption-component [entities]="entities"
+                                   [showExport]="true"
+                                   [table]="dt2"
+                                   (navChanged)="navChanged($event)"
+                                   (exportChanged)="exportChanged($event)"
+                                   [showNavigation]="true"
+                                   [showSearch]="true">
+      </app-table-caption-component>
     </ng-template>
 
     <ng-template pTemplate="header">
@@ -87,12 +81,10 @@
     <ng-template pTemplate="rowexpansion" let-entity>
       <tr>
         <td colspan="8">
-          <app-capacity-stats-component [loading]="false" [entities]="[entity]"></app-capacity-stats-component>
+          <app-aris-row-info-component [loading]="false" [entity]="entity"></app-aris-row-info-component>
         </td>
       </tr>
     </ng-template>
-
-
     <!-- @TODO add cpu/mem/storage summary for the selected servers -->
     <!--    <ng-template pTemplate="summary">-->
     <!--          {{cpu}}-->

@@ -4,7 +4,7 @@ import { Table } from 'primeng/table';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { AbstractTableDataFetcher } from '../abstract.table.data.fetcher';
-import CapacityEntity from '../entities';
+import ArisUsageEntity from '../entities';
 // import * as data from 'customers.json';
 
 /**
@@ -14,8 +14,8 @@ import CapacityEntity from '../entities';
   selector: 'capacity-component',
   templateUrl: 'capacity.component.html',
 })
-export class CapacityComponent extends AbstractTableDataFetcher<CapacityEntity> {
-  entites: CapacityEntity[];
+export class CapacityComponent extends AbstractTableDataFetcher<ArisUsageEntity> {
+  entites: ArisUsageEntity[];
 
   loading: boolean = true;
 
