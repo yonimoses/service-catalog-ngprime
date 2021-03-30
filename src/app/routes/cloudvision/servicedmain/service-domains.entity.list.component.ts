@@ -29,7 +29,7 @@ export class ServiceDomainsEntityListComponent extends AbstractTableList<Service
   }
 
   getFilters(): string[] {
-    return ['service-domain'];
+    return ['service_domain','owner_email','owner_name','system_aris','system_name_aris'];
   }
   getExportedColumns(): string[] {
     return [''];

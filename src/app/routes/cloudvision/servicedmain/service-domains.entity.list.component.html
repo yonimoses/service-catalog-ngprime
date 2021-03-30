@@ -34,9 +34,12 @@
         <th pSortableColumn="group_email">Group Email
           <p-sortIcon field="group_email"></p-sortIcon>
         </th>
-        <th pSortableColumn="aris">Aris
+        <th pSortableColumn="system_aris">Aris
           <p-sortIcon field="system_aris"></p-sortIcon>
         </th>
+        <th># Namespaces</th>
+        <th># Clusters</th>
+        <th># Repositories</th>
 <!--        <th pSortableColumn="code">Code-->
 <!--          <p-sortIcon field="code"></p-sortIcon>-->
 <!--        </th>-->
@@ -59,9 +62,12 @@
                   [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></button>
         </td>
         <td>{{entity.domain_name}}</td>
-        <td>{{entity.owner_email}}</td>
+        <td><a [attr.href]="'mailto:' + entity.owner_email">{{entity.owner_name === null  || entity.owner_name === undefined ? entity.owner_email : entity.owner_name}}</a></td>
         <td>{{entity.group_email}}</td>
-        <td>{{entity.system_aris}} {{entity.system_aris_name}}</td>
+        <td><span class="entities-list-badge aris">{{entity.system_aris}} {{entity.system_name_aris}}</span></td>
+        <td>{{entity.namespaces?.length}}</td>
+        <td>{{entity.clusters?.length}}</td>
+        <td>{{entity.repos?.length}}</td>
 <!--        <td>{{entity.code}}</td>-->
 <!--        <td>{{entity.title}}</td>-->
 <!--        <td> {{entity.owner_name}} <a [attr.href]="'mailto:' + entity.owner_email">-->
@@ -86,7 +92,7 @@
     </ng-template>
     <ng-template pTemplate="emptymessage">
       <tr>
-        <td colspan="8">No Entity found.</td>
+        <td colspan="9">No Entity found.</td>
       </tr>
     </ng-template>
 

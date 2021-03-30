@@ -14,4 +14,6 @@ export abstract class AbstractServiceDomainCardComponent implements OnInit {
 
 
   }
+
+  abstract getCardHeader(): string;
 }

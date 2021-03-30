@@ -15,6 +15,13 @@ export class ServiceDomainClustersCardComponent extends AbstractServiceDomainCar
 
   ngOnInit() {
 
+  }
 
+  getCardHeader() : string{
+    return 'CLUSTERS'
+  }
+
+  asLink(name :string) : string{
+    return 'https://' + name + '.resource.bank:8443'
   }
 }

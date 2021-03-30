@@ -26,6 +26,8 @@ import {ServiceDomainsEntityListComponent} from './servicedmain/service-domains.
 import {ArisRowInfoComponent} from './billing/aris.row.info.component';
 import {ServiceDomainRowInfoComponent} from './servicedmain/service-domain.row.info.component';
 import {ServiceDomainClustersCardComponent} from './servicedmain/cards/service-domain.clusters.card.component';
+import {DividerModule} from 'primeng/divider';
+import {ServiceDomainLinksCardComponent} from './servicedmain/cards/service-domain.links.card.component';
 
 const COMPONENTS = [
   ServersListComponent,
@@ -34,6 +36,7 @@ const COMPONENTS = [
   ServiceDomainsEntityListComponent,
   ServiceDomainsComponent,
   ArisRowInfoComponent,
+  ServiceDomainLinksCardComponent,
   ServiceDomainClustersCardComponent,
   ServiceDomainRowInfoComponent,
   ArisStatsComponent,
@@ -60,6 +63,7 @@ const COMPONENTS_DYNAMIC = [];
     ToolbarModule,
     TooltipModule,
     OrderListModule,
+    DividerModule,
   ],
   declarations: [...COMPONENTS, ...COMPONENTS_DYNAMIC],
   entryComponents: COMPONENTS_DYNAMIC,
