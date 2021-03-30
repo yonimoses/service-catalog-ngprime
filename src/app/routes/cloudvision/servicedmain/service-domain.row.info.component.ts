@@ -20,25 +20,7 @@ export interface CapacityStats {
 export class ServiceDomainRowInfoComponent implements OnInit {
   @Input() entity: ServiceDomain;
   @Input() loading: boolean;
-  MESSAGES = [
-    {
-      img: 'assets/images/avatars/avatar-1.jpg',
-      subject: 'Hydrogen',
-      content: `Cras sit amet nibh libero, in gravida nulla.
-     Nulla vel metus scelerisque ante sollicitudin commodo.`,
-    },
-    {
-      img: 'assets/images/avatars/avatar-2.jpg',
-      subject: 'Helium',
-      content: `Cras sit amet nibh libero, in gravida nulla.
-     Nulla vel metus scelerisque ante sollicitudin commodo.`,
-    },
-    {
-      img: 'assets/images/avatars/avatar-3.jpg',
-      subject: 'Lithium',
-      content: `Cras sit amet nibh libero, in gravida nulla.
-     Nulla vel metus scelerisque ante sollicitudin commodo.`,
-    }]
+
   constructor(private httpClient: HttpClient) {
   }
 

@@ -1,0 +1,44 @@
+<mat-card>
+  <mat-card-title class="f-s-12 f-w-100">
+    Network Policy
+    <mat-spinner [diameter]="20" *ngIf="loading" style="display:inline-block" color="accent" aria-label="Loading"></mat-spinner>
+
+  </mat-card-title>  <!-- Statistics -->
+  <mat-card-content>
+<!--    <mat-tab-group dynamicHeight>-->
+
+
+      <mat-accordion>
+        <mat-expansion-panel  *ngFor="let tab of tabs" >
+          <mat-expansion-panel-header>{{tab.label.toUpperCase()}}</mat-expansion-panel-header>
+          <mat-list>
+            <mat-list-item *ngFor="let entry of getForEnv(tab.label)">
+              <!--            <img matListAvatar [src]="message.img" alt="">-->
+              <h3 matLine><p-tag severity="info" value="{{entry.dns}}"></p-tag> &nbsp; &nbsp;<p-tag severity="info" value="{{entry.address}}"></p-tag></h3>
+<!--              <p matLine>-->
+<!--                <span>{{entry.address}} </span>-->
+<!--              </p>-->
+            </mat-list-item>
+          </mat-list>
+        </mat-expansion-panel>
+      </mat-accordion>
+
+
+
+<!--      <mat-tab *ngFor="let tab of tabs" [disabled]="tab.disabled">-->
+<!--        <ng-template mat-tab-label>{{tab.label.toUpperCase()}}</ng-template>-->
+<!--        <mat-list>-->
+<!--          <mat-list-item *ngFor="let entry of getForEnv(tab.label)">-->
+<!--&lt;!&ndash;            <img matListAvatar [src]="message.img" alt="">&ndash;&gt;-->
+<!--            <h3 matLine> {{entry.dns}} </h3>-->
+<!--            <p matLine>-->
+<!--              <span>{{entry.address}} </span>-->
+<!--            </p>-->
+<!--          </mat-list-item>-->
+<!--        </mat-list>-->
+
+<!--      </mat-tab>-->
+<!--    </mat-tab-group>-->
+
+  </mat-card-content>
+</mat-card>

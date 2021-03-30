@@ -29,11 +29,21 @@ import {ServiceDomainClustersCardComponent} from './servicedmain/cards/service-d
 import {DividerModule} from 'primeng/divider';
 import {ServiceDomainLinksCardComponent} from './servicedmain/cards/service-domain.links.card.component';
 import {DomainDetailsComponent} from './servicedmain/details/domain-details.component';
+import {DomainDetailsUptimeComponent} from './servicedmain/details/domain.details.uptime.component';
+import {DomainDetailsNetworkComponent} from './servicedmain/details/domain.details.network.component';
+import {DomainDetailsAlertsComponent} from './servicedmain/details/domain.details.alerts.component';
+import {DomainDetailsEventsComponent} from './servicedmain/details/domain.details.events.component';
+import {TabViewModule} from 'primeng/tabview';
+import {TagModule} from 'primeng/tag';
 
 const COMPONENTS = [
   ServersListComponent,
   ArisCostComponent,
   DomainDetailsComponent,
+  DomainDetailsEventsComponent,
+  DomainDetailsAlertsComponent,
+  DomainDetailsUptimeComponent,
+  DomainDetailsNetworkComponent,
   ServiceDomainsStatsComponent,
   ServiceDomainsEntityListComponent,
   ServiceDomainsComponent,
@@ -66,6 +76,8 @@ const COMPONENTS_DYNAMIC = [];
     TooltipModule,
     OrderListModule,
     DividerModule,
+    TabViewModule,
+    TagModule,
   ],
   declarations: [...COMPONENTS, ...COMPONENTS_DYNAMIC],
   entryComponents: COMPONENTS_DYNAMIC,
