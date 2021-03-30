@@ -15,10 +15,36 @@ export class ServiceDomainLinksCardComponent extends AbstractServiceDomainCardCo
   }
 
   ngOnInit() {
-    this.keys = Object.keys(this.entity.links)
+    this.keys = Object.keys(this.entity.links);
+    //ocp should have the
+    // this.ocp = this.keys.filter(a=>a === 'ocp');
   }
 
   getCardHeader(): string {
     return 'LINKS'
+  }
+
+  parseLink(link: string) {
+    /**
+     * @todo - remove the trail and suffix
+     * for example
+     * devmaster-a.dev:8443/console/project/atm-switch-dev-default --> should return atm-switch-dev-default
+     *
+     * for grafana it's the ldap group
+     *for bitbucket it's the repo name
+     */
+    if(link.indexOf('grafana') > -1){
+
+    }
+
+    if(link.indexOf('ocp') > -1){
+
+    }
+
+    if(link.indexOf('bitbucket') > -1){
+
+    }
+
+    return link;
   }
 }

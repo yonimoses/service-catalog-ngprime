@@ -5,12 +5,14 @@ import { ServersComponent } from './servers/servers.component';
 import { CapacityComponent } from './billing/capacity.component';
 import { ArisCostComponent } from './billing/aris.cost.component';
 import {ServiceDomainsComponent} from './servicedmain/service-domains.component';
+import {DomainDetailsComponent} from './servicedmain/details/domain-details.component';
 
 const routes: Routes = [
   { path: 'servers', component: ServersComponent, data: { title: 'Servers' } },
   { path: 'capacity', component: CapacityComponent, data: { title: 'Capacity' } },
   { path: 'capacity/cost', component: ArisCostComponent, data: { title: 'Aris Cost' } },
   { path: 'service-domains', component: ServiceDomainsComponent, data: { title: 'Service Domains' } },
+  { path: 'service-domains/domain-details', component: DomainDetailsComponent, data: { title: 'Domains Details' } },
 ];
 
 @NgModule({

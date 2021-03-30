@@ -83,9 +83,9 @@
           <button pButton
                 pRipple
                 type="button"
-                [matTooltip]="'Go to pricing'"
-                (click)="goToPricing(entity)"
-                icon="pi pi-dollar"
+                [matTooltip]="entity.domain_name + ' details'"
+                (click)="goToDetails(entity)"
+                icon="pi pi-eye"
                 class="p-button-text p-button-rounded text-white p-button-plain"></button>
         </td>
       </tr>
@@ -98,7 +98,7 @@
 
     <ng-template pTemplate="rowexpansion" let-entity>
       <tr>
-        <td colspan="8">
+        <td colspan="9">
           <app-service-domain-row-info-component [entity]="entity"></app-service-domain-row-info-component>
         </td>
       </tr>

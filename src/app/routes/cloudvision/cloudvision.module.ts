@@ -28,10 +28,12 @@ import {ServiceDomainRowInfoComponent} from './servicedmain/service-domain.row.i
 import {ServiceDomainClustersCardComponent} from './servicedmain/cards/service-domain.clusters.card.component';
 import {DividerModule} from 'primeng/divider';
 import {ServiceDomainLinksCardComponent} from './servicedmain/cards/service-domain.links.card.component';
+import {DomainDetailsComponent} from './servicedmain/details/domain-details.component';
 
 const COMPONENTS = [
   ServersListComponent,
   ArisCostComponent,
+  DomainDetailsComponent,
   ServiceDomainsStatsComponent,
   ServiceDomainsEntityListComponent,
   ServiceDomainsComponent,

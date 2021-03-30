@@ -40,8 +40,8 @@ export class ServiceDomainsEntityListComponent extends AbstractTableList<Service
     // this.router.navigate()
   }
 
-  goToPricing(entity) {
+  goToDetails(entity) {
     console.log(entity);
-    this.router.navigate(['cost', { aris: entity.aris }], { relativeTo: this.route });
+    this.router.navigate(['domain-details', { domain_name: entity.domain_name }], { relativeTo: this.route });
   }
 }

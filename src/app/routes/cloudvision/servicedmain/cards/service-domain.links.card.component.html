@@ -7,12 +7,11 @@
         <mat-list-item role="listitem" *ngFor="let link of entity.links[key]">
           <!--        {{entity.links[key] | json}}-->
           <img class="card-list-icon" mat-list-avatar [attr.src]="'assets/images/logos/' + key + '.svg'" [alt]="key">
-          <h3 mat-line><a class="text-white" target="_blank" href="{{link}}"> {{key}} </a></h3>
+          <h3 mat-line><a class="text-white" target="_blank" href="{{link}}"> {{parseLink(link)}} </a></h3>
           <!--              <p mat-line class="demo-secondary-text"> {{cluster}} </p>-->
         </mat-list-item>
         <mat-divider></mat-divider>
       </ng-container>
-
     </mat-list>
   </mat-card>
 </section>
