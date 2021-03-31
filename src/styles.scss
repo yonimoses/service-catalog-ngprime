@@ -94,8 +94,21 @@
   background: #FF9800;
 }
 
+
+.entities-list-badge.red {
+  background: #E65100;
+}
+.entities-list-badge.yellow {
+  background: #FFFF8D;
+}
+.entities-list-badge.green {
+  background: #689F38;
+}
+.entities-list-badge.blue {
+  background: #01579B;
+}
 .entities-list-badge.kubernetes {
-  background: #33691E;
+  background: #689F38;
 }
 
 .entities-list-badge.artifactory {
@@ -103,7 +116,7 @@
 }
 
 .entities-list-badge.quantity {
-  background: #33691E;
+  background: #689F38;
 }
 
 .entities-list-badge.price-per-unit {

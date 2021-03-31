@@ -37,8 +37,8 @@
         <th pSortableColumn="system_aris">Aris
           <p-sortIcon field="system_aris"></p-sortIcon>
         </th>
-        <th># Namespaces</th>
         <th># Clusters</th>
+        <th># Namespaces</th>
         <th># Repositories</th>
 <!--        <th pSortableColumn="code">Code-->
 <!--          <p-sortIcon field="code"></p-sortIcon>-->
@@ -65,9 +65,9 @@
         <td><a [attr.href]="'mailto:' + entity.owner_email">{{entity.owner_name === null  || entity.owner_name === undefined ? entity.owner_email : entity.owner_name}}</a></td>
         <td>{{entity.group_email}}</td>
         <td><span class="entities-list-badge aris">{{entity.system_aris}} {{entity.system_name_aris}}</span></td>
-        <td>{{entity.namespaces?.length}}</td>
-        <td>{{entity.clusters?.length}}</td>
-        <td>{{entity.repos?.length}}</td>
+        <td><span class="entities-list-badge green">{{entity.clusters?.length}}</span></td>
+        <td><span class="entities-list-badge red">{{entity.namespaces?.length}}</span></td>
+        <td><span class="entities-list-badge blue">{{entity.repos?.length}}</span></td>
 <!--        <td>{{entity.code}}</td>-->
 <!--        <td>{{entity.title}}</td>-->
 <!--        <td> {{entity.owner_name}} <a [attr.href]="'mailto:' + entity.owner_email">-->
