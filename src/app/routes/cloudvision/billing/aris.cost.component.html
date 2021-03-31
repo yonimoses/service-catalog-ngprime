@@ -1,17 +1,56 @@
 <!--<breadcrumb></breadcrumb>-->
 <div *ngIf="!loading" class="matero-row" fxLayout="row wrap">
 
-  <mat-card [ngClass]="['text-white', 'bg-green-500']" style="width: 100%; display: flex;
-  justify-content: center;
-  align-items: center;">
-    <mat-card-title class="f-s-14 f-w-300">
-      <h1 style="font-size: 3em">{{total}}<i class="pi pi-dollar" style="font-size: 2rem"></i></h1>
-    </mat-card-title>
-    <mat-card-content>
-      <h5>Price is calculated based on the table below and for all greenfield services</h5>
-<!--      <mat-card-subtitle class="text-white"> <small class="text-muted"><a href="mailto:cloudvision@poalim.co.il">Drop us an email about it</a></small></mat-card-subtitle>-->
-    </mat-card-content>
-  </mat-card>
+  <ng-container   *ngFor="let stat of stats">
+    <div class="matero-col"  fxFlex.gt-sm="{{stat.type==='total' ? '50' :'25'}}" fxFlex.gt-xs="{{stat.type==='total' ? '50' :'25'}}" fxFlex="100">
+      <mat-card [ngClass]="['text-white', stat.color]">
+        <mat-card-title class="f-s-18 f-w-300 text-upper">{{stat.type}}</mat-card-title>
+        <mat-card-content>
+          <h2><i class="pi pi-dollar"></i>{{stat.total}}</h2>
+          <small *ngIf="stat.type==='total'" class="text-muted">Price is calculated based on the table below and for all greenfield services</small>
+          <small class="text-muted">&nbsp;</small>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </ng-container>
+
+
+<!--  <mat-card [ngClass]="['text-white', stat.color]">-->
+<!--    <mat-card-title class="f-s-12 f-w-100">{{stat.title}}</mat-card-title>-->
+<!--    <mat-card-content>-->
+<!--      <h2>{{stat.amount}}</h2>-->
+<!--      <mtx-progress [value]="stat.progress.value"-->
+<!--                    height="2px"-->
+<!--                    foreground="rgba(255,255,255,1)"-->
+<!--                    background='rgba(0,0,0,.5)'>-->
+<!--      </mtx-progress>-->
+<!--      <small class="text-muted">Monthly</small>-->
+<!--    </mat-card-content>-->
+<!--  </mat-card>-->
+
+
+<!--  <mat-card [ngClass]="['text-white', 'bg-green-500']">-->
+<!--    <mat-card-content>-->
+<!--      <h1 style="font-size: 3em"><i class="pi pi-dollar" style="font-size: 2rem"></i>{{total}}</h1>-->
+<!--      <mtx-progress [value]="100"-->
+<!--                    height="2px"-->
+<!--                    foreground="rgba(255,255,255,1)"-->
+<!--                    background='rgba(0,0,0,.5)'>-->
+<!--      </mtx-progress>-->
+<!--      <small class="text-muted"></small>-->
+<!--    </mat-card-content>-->
+<!--  </mat-card>-->
+<!--  <mat-card [ngClass]="['text-white', 'bg-green-500']" >-->
+<!--    <mat-card-content>-->
+<!--      <h1 style="font-size: 3em"><i class="pi pi-dollar" style="font-size: 2rem"></i>{{total}}</h1>-->
+<!--      <mtx-progress [value]="100"-->
+<!--                    height="2px"-->
+<!--                    foreground="rgba(255,255,255,1)"-->
+<!--                    background='rgba(0,0,0,.5)'>-->
+<!--      </mtx-progress>-->
+<!--      <small class="text-muted">Price is calculated based on the table below and for all greenfield services</small>-->
+<!--    </mat-card-content>-->
+<!--  </mat-card>-->
 </div>
 
 <div *ngIf="!loading" class="matero-row" fxLayout="row wrap">
@@ -31,21 +70,23 @@
     </ng-template>
 
     <ng-template pTemplate="header">
-      <tr>
-        <th>Name</th>
-        <th>Unit</th>
-        <th>Quantity</th>
-        <th>Price Per Unit</th>
-        <th>Total</th>
+      <tr class="text-upper">
+        <th>NAME</th>
+        <th>Type</th>
+        <th>UNIT</th>
+        <th>QUANTITY</th>
+        <th>PRICE PER UNIT</th>
+        <th>TOTAL</th>
       </tr>
     </ng-template>
     <ng-template pTemplate="body" let-cost>
       <tr>
-        <td>{{cost.prettyName}}</td>
+        <td>{{cost.prettyName.toUpperCase()}}</td>
+        <td><span class="entities-list-badge {{cost.serviceType}}">{{cost.serviceType.toUpperCase()}}</span></td>
         <td>{{cost.help}}</td>
-        <td>{{cost.quantity}}</td>
-        <td>{{cost.pricePerUnit}}</td>
-        <td>{{cost.total}}</td>
+        <td><span class="entities-list-badge quantity">{{cost.quantity}}</span></td>
+        <td><i class="pi pi-dollar"></i>{{cost.pricePerUnit}}</td>
+        <td><i class="pi pi-dollar"></i>{{cost.total}}</td>
       </tr>
     </ng-template>
     <ng-template pTemplate="summary">

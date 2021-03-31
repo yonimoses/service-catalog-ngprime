@@ -52,9 +52,9 @@
         <td>{{entity.aris}}</td>
         <td>{{entity.code}}</td>
         <td>{{entity.title}}</td>
-        <td> {{entity.owner_name}} <a [attr.href]="'mailto:' + entity.owner_email">
+        <td> {{entity.owner_name}} <a target="_top" [attr.href]="'mailto:' + entity.owner_email">
           <i class="pi pi-envelope"></i></a></td>
-        <td><span class="entities-list-badge names">{{entity.service_domains.names | length}}</span></td>
+        <td><span class="entities-list-badge names">{{entity.service_domains?.names | length}}</span></td>
         <td><span class="entities-list-badge deployments">{{entity.service_domains?.deployments | length}}</span></td>
         <td>
           <button type="button" pButton pRipple [pRowToggler]="entity"
@@ -80,7 +80,7 @@
 
     <ng-template pTemplate="rowexpansion" let-entity>
       <tr>
-        <td colspan="8">
+        <td style="background-color: #212121 !important" colspan="8">
           <app-aris-row-info-component [loading]="false" [entity]="entity"></app-aris-row-info-component>
         </td>
       </tr>

@@ -18,27 +18,33 @@
   width: 20px !important;
   height: 20px !important;;
 }
+
 .p-tooltip {
   background: #424242;
 
 }
+
 .p-paginator {
   background: #424242;
 }
+
 .p-paginator .p-paginator-current {
   //color: bg-orange-500;
 }
+
 //.p-component, .p-component * {
 //  background: #424242;
 //}
 
 
-.p-datatable .p-datatable-tbody > tr > td{
+.p-datatable .p-datatable-tbody > tr > td {
   background: #424242;
 }
+
 .p-datatable-tbody {
   background: #424242;
 }
+
 .p-datatable .p-datatable-thead > tr > th {
   //border: 1px solid #838d9a;
   background: #424242;
@@ -47,51 +53,91 @@
 .p-datatable .p-datatable-header {
   background: #424242 !important;
 }
+
 .p-datatable .p-datatable-footer {
-  background: #424242  !important;
+  background: #424242 !important;
 }
+
 .p-datatable .p-datatable-thead > tr > th {
-  background: #424242  !important;
+  background: #424242 !important;
 }
 
-
-.cpu {
-  background: #3F51B5;
+.entities-list-badge {
+  border-radius: 2px;
+  padding: .25em .5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: .3px;
   color: white;
+
 }
 
+.text-upper {
+  text-transform: uppercase;
+}
 
-.aris {
+.entities-list-badge.cpu {
   background: #3F51B5;
-  color: white;
 }
 
-.memory {
+
+.entities-list-badge.aris {
+  background: #3F51B5;
+}
+
+.entities-list-badge.memory {
   background: #2196F3;
-  color: white;
 }
 
-.storage {
+.entities-list-badge.storage {
   background: #FF9800;
-  color: white;
 }
 
-.kubernetes {
+.entities-list-badge.kubernetes {
   background: #33691E;
-  color: white;
 }
 
-.artifactory {
+.entities-list-badge.artifactory {
   background: #827717;
-  color: white;
 }
 
-.jenkins {
+.entities-list-badge.quantity {
+  background: #33691E;
+}
+
+.entities-list-badge.price-per-unit {
+  background: #FF9800;
+}
+
+.entities-list-badge.jenkins {
   background: #3E2723;
-  color: white;
 }
 
-.atlassian {
-  background: #E65100;
-  color: white;
+.entities-list-badge.hardware {
+  background: #3E2723;
 }
+
+.entities-list-badge.software {
+  background: #FF9800;
+}
+
+.entities-list-badge.atlassian {
+  background: #E65100;
+}
+
+.entities-list-badge.deployments {
+  background: #2196F3;
+}
+
+.entities-list-badge.names {
+  background: #FF9800;
+}
+
+//
+//.p-datatable .p-sortable-column.p-highlight:hover {
+//  background: none !important;
+//}
+//.p-datatable .p-sortable-column:not(.p-highlight):hover{
+//  background: none !important;
+//}

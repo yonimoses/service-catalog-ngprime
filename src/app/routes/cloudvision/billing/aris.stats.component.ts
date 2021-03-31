@@ -53,7 +53,7 @@ export class ArisStatsComponent implements OnInit {
       {
         title: 'Namespaces',
         amount: namespaces,
-        subtitle: 'Total namespaces in all OCP clusters',
+        subtitle: 'Total namespaces for service domains in all OCP clusters',
         color: 'bg-orange-500',
       }
     ];
