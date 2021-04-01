@@ -1,11 +1,10 @@
-import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { AbstractTableList } from '../abstract.table.list';
-import ArisUsageEntity, {ServiceDomain} from '../entities';
-import { ActivatedRoute, Router } from '@angular/router';
-import ServicePriceUnit from '../entities';
-import { Observable } from 'rxjs';
-import { URL_COST_SERVICES } from '../consts';
+import {Component} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {AbstractTableList} from '../abstract.table.list';
+import {ServiceDomain} from '../entities';
+import {ActivatedRoute, Router} from '@angular/router';
+import {MatDialog} from '@angular/material/dialog';
+import {ServiceDomainDeploymentEnvChart} from './charts/service.domain.deployment.env.chart';
 
 /**
  * @title Basic use of `<table mat-table>`
@@ -17,7 +16,7 @@ import { URL_COST_SERVICES } from '../consts';
 })
 export class ServiceDomainsEntityListComponent extends AbstractTableList<ServiceDomain> {
 
-  constructor(httpClient: HttpClient, private router: Router, private route: ActivatedRoute) {
+  constructor(private dialog: MatDialog, httpClient: HttpClient, private router: Router, private route: ActivatedRoute) {
     super(httpClient);
   }
 
@@ -28,9 +27,13 @@ export class ServiceDomainsEntityListComponent extends AbstractTableList<Service
     // this.storage = this.servers.map(aa => aa.storage * 1).reduce((server, currentValue) => server + currentValue,0);
   }
 
-  getFilters(): string[] {
-    return ['service_domain','owner_email','owner_name','system_aris','system_name_aris'];
+  openWelcomeDialog() {
   }
+
+  getFilters(): string[] {
+    return ['service_domain', 'owner_email', 'owner_name', 'system_aris', 'system_name_aris'];
+  }
+
   getExportedColumns(): string[] {
     return [''];
   }
@@ -41,7 +44,15 @@ export class ServiceDomainsEntityListComponent extends AbstractTableList<Service
   }
 
   goToDetails(entity) {
-    console.log(entity);
-    this.router.navigate(['domain-details', { domain_name: entity.domain_name }], { relativeTo: this.route });
+    this.router.navigate(['domain-details', {domain_name: entity.domain_name}], {relativeTo: this.route});
+  }
+
+  showEnvChart(entity) {
+    this.dialog.open(ServiceDomainDeploymentEnvChart, {
+      data: {
+        entity: entity,
+      }
+    });
+    // this.router.navigate(['env-chart', {domain_name: entity.domain_name}], {relativeTo: this.route});
   }
 }

@@ -1,7 +1,4 @@
-<section>
-  <mat-card [ngClass]="['text-white', 'bg-gray-600']">
-    <mat-card-title>{{getCardHeader()}}</mat-card-title>
-    <mat-divider></mat-divider>
+  <mat-card [ngClass]="['text-white']">
     <mat-list>
       <ng-container *ngFor="let key of keys">
         <mat-list-item role="listitem" *ngFor="let link of entity.links[key]">
@@ -14,4 +11,3 @@
       </ng-container>
     </mat-list>
   </mat-card>
-</section>

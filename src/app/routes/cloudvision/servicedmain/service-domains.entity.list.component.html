@@ -1,5 +1,15 @@
 <div class="card">
-  <h3>Service Domainsz</h3>
+  <mat-grid-list role="list" [cols]="2" [rowHeight]="30">
+    <mat-grid-tile role="listitem">
+      <div fxFlex fxLayoutAlign="start left"><h3>Service Domains</h3></div>
+
+    </mat-grid-tile>
+<!--    <mat-grid-tile role="listitem">-->
+<!--      <button mat-icon-button aria-label="Delete">-->
+<!--        <mat-icon color="accent">zoom_out_map</mat-icon>-->
+<!--      </button>-->
+<!--    </mat-grid-tile>-->
+  </mat-grid-list>
 </div>
 <div class="card">
   <p-table #dt2 [value]="entities" dataKey="domain_name"
@@ -40,17 +50,17 @@
         <th># Clusters</th>
         <th># Namespaces</th>
         <th># Repositories</th>
-<!--        <th pSortableColumn="code">Code-->
-<!--          <p-sortIcon field="code"></p-sortIcon>-->
-<!--        </th>-->
-<!--        <th pSortableColumn="title">Title-->
-<!--          <p-sortIcon field="title"></p-sortIcon>-->
-<!--        </th>-->
-<!--        <th pSortableColumn="owner">Owner-->
-<!--          <p-sortIcon field="owner"></p-sortIcon>-->
-<!--        </th>-->
-<!--        <th># Namespaces</th>-->
-<!--        <th># Deployments</th>-->
+        <!--        <th pSortableColumn="code">Code-->
+        <!--          <p-sortIcon field="code"></p-sortIcon>-->
+        <!--        </th>-->
+        <!--        <th pSortableColumn="title">Title-->
+        <!--          <p-sortIcon field="title"></p-sortIcon>-->
+        <!--        </th>-->
+        <!--        <th pSortableColumn="owner">Owner-->
+        <!--          <p-sortIcon field="owner"></p-sortIcon>-->
+        <!--        </th>-->
+        <!--        <th># Namespaces</th>-->
+        <!--        <th># Deployments</th>-->
         <th>Actions</th>
       </tr>
     </ng-template>
@@ -61,19 +71,21 @@
                   class="p-button-text p-button-rounded p-button-plain"
                   [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></button>
         </td>
-        <td>{{entity.domain_name}}</td>
-        <td><a [attr.href]="'mailto:' + entity.owner_email">{{entity.owner_name === null  || entity.owner_name === undefined ? entity.owner_email : entity.owner_name}}</a></td>
+        <td><a style="cursor:pointer" [pRowToggler]="entity">{{entity.domain_name}}</a></td>
+        <td><a
+          [attr.href]="'mailto:' + entity.owner_email">{{entity.owner_name === null || entity.owner_name === undefined ? entity.owner_email : entity.owner_name}}</a>
+        </td>
         <td>{{entity.group_email}}</td>
         <td><span class="entities-list-badge aris">{{entity.system_aris}} {{entity.system_name_aris}}</span></td>
         <td><span class="entities-list-badge green">{{entity.clusters?.length}}</span></td>
         <td><span class="entities-list-badge red">{{entity.namespaces?.length}}</span></td>
         <td><span class="entities-list-badge blue">{{entity.repos?.length}}</span></td>
-<!--        <td>{{entity.code}}</td>-->
-<!--        <td>{{entity.title}}</td>-->
-<!--        <td> {{entity.owner_name}} <a [attr.href]="'mailto:' + entity.owner_email">-->
-<!--          <i class="pi pi-envelope"></i></a></td>-->
-<!--        <td><span class="entities-list-badge names">{{entity.service_domains.names | length}}</span></td>-->
-<!--        <td><span class="entities-list-badge deployments">{{entity.service_domains?.deployments | length}}</span></td>-->
+        <!--        <td>{{entity.code}}</td>-->
+        <!--        <td>{{entity.title}}</td>-->
+        <!--        <td> {{entity.owner_name}} <a [attr.href]="'mailto:' + entity.owner_email">-->
+        <!--          <i class="pi pi-envelope"></i></a></td>-->
+        <!--        <td><span class="entities-list-badge names">{{entity.service_domains.names | length}}</span></td>-->
+        <!--        <td><span class="entities-list-badge deployments">{{entity.service_domains?.deployments | length}}</span></td>-->
         <td>
           <button type="button" pButton pRipple [pRowToggler]="entity"
                   [matTooltip]="'Show service usage'"
@@ -81,12 +93,19 @@
                   [icon]="'pi pi-heart'"></button>
 
           <button pButton
-                pRipple
-                type="button"
-                [matTooltip]="entity.domain_name + ' details'"
-                (click)="goToDetails(entity)"
-                icon="pi pi-eye"
-                class="p-button-text p-button-rounded text-white p-button-plain"></button>
+                  pRipple
+                  type="button"
+                  [matTooltip]="entity.domain_name + ' details'"
+                  (click)="goToDetails(entity)"
+                  icon="pi pi-eye"
+                  class="p-button-text p-button-rounded text-white p-button-plain"></button>
+
+          <button type="button" pButton pRipple
+                  (click)="showEnvChart(entity)"
+                  [matTooltip]="'Show NS Deployment chart'"
+                  class="p-button-text p-button-rounded text-white p-button-plain"
+                  [icon]="'pi pi-map'"></button>
+
         </td>
       </tr>
     </ng-template>

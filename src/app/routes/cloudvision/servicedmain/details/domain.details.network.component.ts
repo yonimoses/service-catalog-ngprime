@@ -1,15 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {ActivatedRoute, Router} from '@angular/router';
-import {ServiceDomain} from '../../entities';
+import {NetworkConnection, ServiceDomain} from '../../entities';
 import {URL_SERVICE_DOMAIN_NETWORK} from '../../consts';
 
-export interface NetworkConnection {
-  dns: string;
-  env: string;
-  name: string;
-  address: string;
-}
+
 
 @Component({
   selector: 'app-domain-details-network-component',

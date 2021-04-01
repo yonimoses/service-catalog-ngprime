@@ -41,6 +41,16 @@
   background: #424242;
 }
 
+
+.p-organizationchart .p-organizationchart-node-content {
+  background: #424242;
+  border: 1px solid #FFFF8D;
+}
+
+.p-l-3 {
+  padding-left: 3px;
+}
+
 .p-datatable-tbody {
   background: #424242;
 }
@@ -98,15 +108,19 @@
 .entities-list-badge.red {
   background: #E65100;
 }
+
 .entities-list-badge.yellow {
   background: #FFFF8D;
 }
+
 .entities-list-badge.green {
   background: #689F38;
 }
+
 .entities-list-badge.blue {
   background: #01579B;
 }
+
 .entities-list-badge.kubernetes {
   background: #689F38;
 }

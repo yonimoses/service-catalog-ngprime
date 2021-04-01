@@ -1,0 +1,131 @@
+<div class="lists-container">
+  <!--  connect -->
+  <div class="link-list">
+    <div class="link-list-header"><a>DevSecOps Reports Links</a></div>
+    <div class="link-list-single-link" *ngFor="let link of entity.links.checkmarx">
+      <img style="width:20px;height:20px" src="assets/images/logos/checkmarx.svg" alt="">
+      <a class="text-white link-list-single-link-padding" [attr.href]="link" target="_blank">Checkmarx</a>
+    </div>
+    <div class="link-list-single-link" *ngFor="let link of entity.links.aqua">
+      <img style="width:20px;height:20px" src="assets/images/logos/aqua.svg" alt="">
+      <a class="text-white link-list-single-link-padding" [attr.href]="link" target="_blank">Aqua</a>
+    </div>
+    <div class="link-list-single-link" *ngFor="let link of entity.links.snyk">
+      <img style="width:20px;height:20px" src="assets/images/logos/checkmarx.svg" alt="">
+      <a class="text-white link-list-single-link-padding" [attr.href]="link" target="_blank">Snyk</a>
+    </div>
+    <div class="link-list-single-link" *ngFor="let link of entity.links.sonarqube">
+      <img style="width:20px;height:20px" src="assets/images/logos/sonarqube.svg" alt="">
+      <a class="text-white link-list-single-link-padding" [attr.href]="link" target="_blank">Sonarqube</a>
+    </div>
+
+    <!--    <div class="link-list-single-link">-->
+    <!--      <mat-icon class="icon-20">chat</mat-icon>-->
+    <!--      <a style="" class="link-list-single-link" href="#" disabled="disabled" target="_blank">Chat</a>-->
+    <!--    </div>-->
+  </div>
+  <div class="link-list">
+    <div class="link-list-header"><a>Reference</a></div>
+
+
+    <div class="link-list-single-link" *ngFor="let bb of entity.links.bitbucket">
+      <img style="width:20px;height:20px" src="assets/images/logos/bitbucket.svg" alt="">
+      <a class="text-white link-list-single-link-padding" [attr.href]="bb" target="_blank">Source</a>
+    </div>
+
+    <div class="link-list-single-link" *ngFor="let ocp of entity.links.ocp">
+      <img style="width:20px;height:20px" src="assets/images/logos/ocp.svg" alt="">
+      <a class="text-white link-list-single-link-padding" [attr.href]="ocp" target="_blank">{{getOCPNamespace(ocp)}}</a>
+    </div>
+
+
+<!--    <div class="info-container-service-repository-links-link">-->
+<!--      <div class="tj14ZK5r_AKZLaG_c4h9_">-->
+<!--        <svg viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--          <path clip-rule="evenodd"-->
+<!--                d="M5.958 1.25a2.5 2.5 0 00-2.5 2.5v12.5a2.5 2.5 0 002.5 2.5h8.75a2.5 2.5 0 002.5-2.5V8.644c0-.497-.197-.974-.549-1.325L11.141 1.8a1.875 1.875 0 00-1.325-.55H5.958zm-.883 1.617a1.25 1.25 0 01.883-.366h3.858c.166 0 .324.066.442.183l5.518 5.518a.625.625 0 01.183.441v7.608a1.25 1.25 0 01-1.25 1.25h-8.75a1.25 1.25 0 01-1.25-1.25V3.75c0-.332.131-.65.366-.884z"></path>-->
+<!--          <path clip-rule="evenodd"-->
+<!--                d="M10.334 1.563c.345 0 .625.28.625.625v4.688a.625.625 0 00.625.625h4.687a.625.625 0 110 1.25h-4.688A1.875 1.875 0 019.71 6.876V2.188c0-.345.28-.625.625-.625zM6.583 11.25c0-.345.28-.624.625-.624h6.25a.625.625 0 110 1.25h-6.25a.625.625 0 01-.625-.625zM6.583 14.376c0-.345.28-.625.625-.625h6.25a.625.625 0 110 1.25h-6.25a.625.625 0 01-.625-.625z"></path>-->
+<!--        </svg>-->
+<!--        API Documentation<span class="_2AO7W0MJzWwdVLBCVeWbza _1kkyPQGQiYC1PvAjUCCgQj">Install and configure the Ambassador Developer Portal to automatically expose Swagger &amp; OpenAPI documentation.<br><a-->
+<!--        href="https://www.getambassador.io/products/developer-portal/" target="_blank">Learn more</a></span>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="info-container-service-repository-links-link">-->
+<!--      <div class="tj14ZK5r_AKZLaG_c4h9_">-->
+<!--        <svg viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--          <path clip-rule="evenodd"-->
+<!--                d="M9.577 17.58c-.553-.588-1.316-1.1-2.577-1.452v-.002c-1.129-.315-2.656-.501-4.792-.501a1.25 1.25 0 01-1.25-1.25V3.125a1.248 1.248 0 011.253-1.25c2.605.011 4.589.334 6.022 1.02.059.027.116.056.172.085.847.435 1.484 1.002 1.929 1.696.059-.093.122-.183.188-.27.463-.617 1.096-1.122 1.912-1.512 1.433-.685 3.417-1.008 6.022-1.02a1.25 1.25 0 011.253 1.252v11.249a1.25 1.25 0 01-1.25 1.25c-2.714 0-4.447.301-5.626.785v.002c-.788.323-1.33.727-1.749 1.174-.093.1-.18.2-.262.304a.625.625 0 01-.977 0l-.003-.004a5.162 5.162 0 00-.265-.306zm1.59-1.697c1.427-.962 3.584-1.508 7.292-1.508V3.125c-2.533.011-4.299.33-5.486.897a5.307 5.307 0 00-.21.106c-.78.416-1.289.955-1.596 1.624v10.131zm-1.667 0c-1.427-.962-3.584-1.508-7.292-1.508V3.125c2.08.01 3.642.226 4.792.617.25.085.482.179.694.28.899.43 1.472 1.002 1.806 1.73v10.13z"></path>-->
+<!--        </svg>-->
+<!--        Runbook<span class="_2AO7W0MJzWwdVLBCVeWbza _1kkyPQGQiYC1PvAjUCCgQj">Link to an external project runbook by adding the "a8r.io/runbook" annotation on your Kubernetes Service metadata.<br><a>Learn more</a></span>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="info-container-service-repository-links-link">-->
+<!--      <div class="tj14ZK5r_AKZLaG_c4h9_">-->
+<!--        <svg viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--          <path clip-rule="evenodd"-->
+<!--                d="M12.6.625a1.595 1.595 0 011.131.472l.002.002 4.262 4.335a1.607 1.607 0 01.464 1.128v6.719c0 1.278-1.009 2.344-2.303 2.344h-2.072v1.406c0 1.278-1.009 2.344-2.303 2.344H4.513c-1.296 0-2.304-1.065-2.304-2.344V6.715a2.354 2.354 0 012.34-2.34H6.583v-1.41a2.354 2.354 0 012.34-2.34H12.6zm-.704 1.25H8.93A1.104 1.104 0 007.833 2.97v1.405h.397a1.584 1.584 0 011.128.474l4.264 4.337c.296.302.462.708.462 1.131v4.058h2.072c.572 0 1.053-.474 1.053-1.094V7.187h-3.602a1.732 1.732 0 01-1.71-1.711V1.875zm4.841 4.062H13.62a.482.482 0 01-.473-.473V2.285l3.591 3.652zm-9.216-.312H4.554A1.104 1.104 0 003.458 6.72v10.31c0 .62.48 1.095 1.055 1.095h7.268c.572 0 1.053-.474 1.053-1.094v-6.094H9.232a1.732 1.732 0 01-1.711-1.711V5.625zm4.841 4.062H9.244a.482.482 0 01-.473-.473V6.035l3.591 3.652z"></path>-->
+<!--        </svg>-->
+<!--        Logs<span class="_2AO7W0MJzWwdVLBCVeWbza _1kkyPQGQiYC1PvAjUCCgQj">Link to your service external log viewer by adding the "a8r.io/logs" annotation on your Kubernetes Service metadata.<br><a>Learn more</a></span>-->
+<!--      </div>-->
+<!--    </div>-->
+  </div>
+
+
+  <!--  monitor -->
+
+  <div class="link-list">
+    <div class="link-list-header">
+      <a>Monitor</a>
+    </div>
+    <div class="link-list-single-link" *ngFor="let grafana of entity.links.grafana">
+      <img style="width:20px;height:20px" src="assets/images/logos/grafana.svg" alt="">
+      <a class="text-white link-list-single-link-padding" [attr.href]="grafana" target="_blank">Dashboard</a>
+    </div>
+    <div class="link-list-single-link">
+      <img style="width:20px;height:20px" src="assets/images/logos/jira.svg" alt="">
+      <a class="text-white link-list-single-link-padding" [attr.href]="getTicketingBoard()" target="_blank">Tickets</a>
+    </div>
+
+
+<!--    <div class="link-list-single-link">-->
+<!--      <a href="https://github.com/datawire/ambassador/issues" target="_blank">-->
+
+<!--      Bug Tracking</a></div>-->
+<!--    <div class="link-list-single-link"><a href="https://status.getambassador.io" target="_blank">-->
+<!--      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--        <path clip-rule="evenodd"-->
+<!--              d="M10.019 3.513c.85-1.577 3.112-1.577 3.962 0L21.97 18.35a2.25 2.25 0 01-1.98 3.317H4.01a2.25 2.25 0 01-1.98-3.317l7.988-14.836zm9.97 16.653a.75.75 0 00.66-1.105L12.661 4.225a.75.75 0 00-1.322 0L3.351 19.06a.75.75 0 00.66 1.105"></path>-->
+<!--        <path clip-rule="evenodd"-->
+<!--              d="M11.99 8.13a1.019 1.019 0 011.028 1.065v.001l-.269 5.717a.75.75 0 01-1.498 0l-.27-5.72v-.007A1.019 1.019 0 0111.99 8.13z"></path>-->
+<!--        <path d="M12 18.62a.938.938 0 110-1.875.938.938 0 010 1.875z"></path>-->
+<!--      </svg>-->
+<!--      Incidents</a></div>-->
+<!--    <div class="info-container-service-repository-links-link">-->
+<!--      <div class="tj14ZK5r_AKZLaG_c4h9_">-->
+<!--        <svg viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--          <path-->
+<!--            d="M9.625 1.667A8.127 8.127 0 001.5 9.792a8.127 8.127 0 008.125 8.125v-1.25A6.877 6.877 0 012.75 9.792a6.877 6.877 0 016.875-6.875c2.914 0 5.458 2.022 6.458 4.583h1.334c-.995-3.362-4.108-5.833-7.792-5.833z"></path>-->
+<!--          <path clip-rule="evenodd"-->
+<!--                d="M15.018 10.155a.625.625 0 01.88 0l3.125 3.1a.625.625 0 11-.88.888l-2.685-2.664-2.685 2.664a.625.625 0 11-.88-.888l3.125-3.1z"></path>-->
+<!--          <path clip-rule="evenodd"-->
+<!--                d="M15.458 10.404c.345 0 .625.28.625.625v6.288a.625.625 0 11-1.25 0v-6.288c0-.345.28-.625.625-.625zM10.041 4.168a.625.625 0 00-.625.625v5H6.292a.625.625 0 000 1.25h3.75c.345 0 .624-.28.624-.625V4.793a.625.625 0 00-.625-.625z"></path>-->
+<!--        </svg>-->
+<!--        Uptime Dashboard<span class="_2AO7W0MJzWwdVLBCVeWbza _1kkyPQGQiYC1PvAjUCCgQj">Link to an external observability and uptime dashboard by adding the "a8r.io/uptime" annotation on your Kubernetes Service metadata.<br><a>Learn more</a></span>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="info-container-service-repository-links-link">-->
+<!--      <div class="tj14ZK5r_AKZLaG_c4h9_">-->
+<!--        <svg viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--          <path-->
+<!--            d="M13.405 9.058l-1.856 2.949a1.21 1.21 0 01-.273.273 1.176 1.176 0 01-1.367-1.914l2.949-1.855a.4.4 0 01.457 0 .393.393 0 01.09.547z"></path>-->
+<!--          <path clip-rule="evenodd"-->
+<!--                d="M1.292 11.246c0-5.177 4.198-9.37 9.375-9.37s9.375 4.193 9.375 9.37c.003 2.355-.904 4.626-2.488 6.36l-.002.002a1.61 1.61 0 01-2.37-.006s-1.266-1.12-2.049-1.463a6.138 6.138 0 00-6.982 1.464v-.001.001a1.609 1.609 0 01-1.83.388c-.051-.022-.523-.367-.522-.365-1.649-1.649-2.51-4.07-2.507-6.38zm9.375-8.12a8.122 8.122 0 00-8.125 8.12v.002A8.096 8.096 0 004.7 16.76a.358.358 0 00.529-.001l.002-.002a7.388 7.388 0 0110.873 0l.001.002a.36.36 0 00.528.002 8.18 8.18 0 002.159-5.513v-.001a8.122 8.122 0 00-8.125-8.121z"></path>-->
+<!--          <path clip-rule="evenodd"-->
+<!--                d="M10.666 4.374c.346 0 .625.28.625.625v1.25a.625.625 0 11-1.25 0V5c0-.345.28-.625.625-.625zM15.041 11.25c0-.345.28-.624.625-.624h1.25a.625.625 0 110 1.25h-1.25a.625.625 0 01-.625-.625zM3.792 11.25c0-.345.28-.624.625-.624h1.25a.625.625 0 110 1.25h-1.25a.625.625 0 01-.625-.625zM5.805 6.388a.625.625 0 01.884 0l.885.885a.625.625 0 01-.884.884l-.885-.885a.625.625 0 010-.884zM15.529 6.388a.625.625 0 010 .884l-.885.885a.625.625 0 01-.884-.884l.885-.885a.625.625 0 01.884 0z"></path>-->
+<!--        </svg>-->
+<!--        Performance Dashboard<span class="_2AO7W0MJzWwdVLBCVeWbza _1kkyPQGQiYC1PvAjUCCgQj">Link to an external observability and performance dashboard by adding the "a8r.io/performance" annotation on your Kubernetes Service metadata.<br><a>Learn more</a></span>-->
+<!--      </div>-->
+<!--    </div>-->
+  </div>
+</div>

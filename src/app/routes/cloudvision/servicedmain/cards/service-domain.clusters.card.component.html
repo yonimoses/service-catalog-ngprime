@@ -1,8 +1,4 @@
-<section>
-  <mat-card [ngClass]="['text-white', 'bg-gray-600']">
-      <mat-card-title>{{getCardHeader()}}</mat-card-title>
-      <mat-card-subtitle>{{getCardHeader()}}</mat-card-subtitle>
-      <mat-divider></mat-divider>
+  <mat-card [ngClass]="['text-white']">
       <mat-list>
         <mat-list-item role="listitem" *ngFor="let cluster of entity.clusters">
           <img class="card-list-icon" mat-list-avatar src="assets/images/logos/ocp.svg" [alt]="cluster">
@@ -11,4 +7,3 @@
         </mat-list-item>
       </mat-list>
     </mat-card>
-</section>

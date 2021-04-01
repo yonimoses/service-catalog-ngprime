@@ -1,6 +1,19 @@
 export interface TableRow {}
 
 
+export interface NetworkConnection {
+  dns: string;
+  env: string;
+  name: string;
+  address: string;
+}
+export interface Quota {
+  cpu: string;
+  env: string;
+  memory: string;
+  storage: string;
+}
+
 export interface Envs {
   dev: any[];
   prod: any[];
@@ -13,6 +26,10 @@ export interface Links {
   bitbucket: string[];
   jira: any[];
   sonarqube: any[];
+  artifactory: any[];
+  aqua: any[];
+  checkmarx: any[],
+  snyk: any[],
   ocp: string[];
 }
 
