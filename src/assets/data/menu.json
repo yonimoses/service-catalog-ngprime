@@ -35,6 +35,10 @@
       "icon": "color_lens",
       "children": [
         {
+          "route": "central-services",
+          "name": "central-services",
+          "type": "link"
+        }, {
           "route": "servers",
           "name": "servers",
           "type": "link"

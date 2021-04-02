@@ -20,33 +20,35 @@ import {ToolbarModule} from 'primeng/toolbar';
 import {TooltipModule} from 'primeng/tooltip';
 import {TableCaptionComponent} from './fragments/table.caption.component';
 import {OrderListModule} from 'primeng/orderlist';
-import {ServiceDomainsComponent} from './servicedmain/service-domains.component';
-import {ServiceDomainsStatsComponent} from './servicedmain/service-domains.stats.component';
-import {ServiceDomainsEntityListComponent} from './servicedmain/service-domains.entity.list.component';
+import {ServiceDomainsComponent} from './service-domain/service-domains.component';
+import {ServiceDomainsStatsComponent} from './service-domain/service-domains.stats.component';
+import {ServiceDomainsEntityListComponent} from './service-domain/service-domains.entity.list.component';
 import {ArisRowInfoComponent} from './billing/aris.row.info.component';
-import {ServiceDomainRowInfoComponent} from './servicedmain/row/service-domain.row.info.component';
-import {ServiceDomainClustersCardComponent} from './servicedmain/cards/service-domain.clusters.card.component';
+import {ServiceDomainRowInfoComponent} from './service-domain/row/service-domain.row.info.component';
+import {ServiceDomainClustersCardComponent} from './service-domain/cards/service-domain.clusters.card.component';
 import {DividerModule} from 'primeng/divider';
-import {ServiceDomainLinksCardComponent} from './servicedmain/cards/service-domain.links.card.component';
-import {DomainDetailsComponent} from './servicedmain/details/domain-details.component';
-import {DomainDetailsUptimeComponent} from './servicedmain/details/domain.details.uptime.component';
-import {DomainDetailsNetworkComponent} from './servicedmain/details/domain.details.network.component';
-import {DomainDetailsAlertsComponent} from './servicedmain/details/domain.details.alerts.component';
-import {DomainDetailsEventsComponent} from './servicedmain/details/domain.details.events.component';
+import {ServiceDomainLinksCardComponent} from './service-domain/cards/service-domain.links.card.component';
+import {DomainDetailsComponent} from './service-domain/details/domain-details.component';
+import {DomainDetailsUptimeComponent} from './service-domain/details/domain.details.uptime.component';
+import {DomainDetailsNetworkComponent} from './service-domain/details/domain.details.network.component';
+import {DomainDetailsAlertsComponent} from './service-domain/details/domain.details.alerts.component';
+import {DomainDetailsEventsComponent} from './service-domain/details/domain.details.events.component';
 import {TabViewModule} from 'primeng/tabview';
 import {TagModule} from 'primeng/tag';
 import {OverlayPanelModule} from 'primeng/overlaypanel';
-import {ServiceDomainRowInfoLinksComponent} from './servicedmain/row/service-domain.row.info.links.component';
-import {NetworkPolicySheetComponent} from './servicedmain/row/sheets/network.policy.sheet.components';
-import {QuotaSheetComponent} from './servicedmain/row/sheets/quota.sheet.component';
-import {ServiceDomainDeploymentEnvChart} from './servicedmain/charts/service.domain.deployment.env.chart';
+import {ServiceDomainRowInfoLinksComponent} from './service-domain/row/service-domain.row.info.links.component';
+import {NetworkPolicySheetComponent} from './service-domain/row/sheets/network.policy.sheet.components';
+import {QuotaSheetComponent} from './service-domain/row/sheets/quota.sheet.component';
+import {ServiceDomainDeploymentEnvChart} from './service-domain/charts/service.domain.deployment.env.chart';
 import {OrganizationChartModule} from 'primeng/organizationchart';
-import {ServiceDomainParticipantsComponent} from './servicedmain/row/service.domain.participants.component';
+import {ServiceDomainParticipantsComponent} from './service-domain/row/service.domain.participants.component';
 import {CentralServicesStatsComponent} from './central-services/central-services.stats.component';
 import {CentralServicesComponent} from './central-services/central-services.component';
+import {CentralServicesListComponent} from './central-services/central-services.list.component';
 
 const COMPONENTS = [
   CentralServicesComponent,
+  CentralServicesListComponent,
   CentralServicesStatsComponent,
   ServersListComponent,
   ArisCostComponent,

@@ -11,13 +11,13 @@
       <p-progressSpinner></p-progressSpinner>
     </ng-template>
     <ng-template #loaded>
-      <app-servers-stats-component [entities]="entities"></app-servers-stats-component>
+      <app-central-services-stats-component [entities]="entities"></app-central-services-stats-component>
     </ng-template>
   </div>
 
   <!--  <div class="matero-row" fxLayout="row wrap">-->
   <div class="matero-col" fxFlex="100">
-    <app-servers-list-component [loading]="loading" [entities]="entities"></app-servers-list-component>
+    <app-central-services-list-component [loading]="loading" [entities]="entities"></app-central-services-list-component>
   </div>
 </div>
 <!--  </div>-->

@@ -7,6 +7,14 @@ export interface NetworkConnection {
   name: string;
   address: string;
 }
+
+export interface CentralService {
+  dns: string;
+  port: number;
+  env: string;
+  name: string;
+  address: string;
+}
 export interface Quota {
   cpu: string;
   env: string;

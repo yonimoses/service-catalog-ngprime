@@ -51,7 +51,7 @@ export class ServiceDomainsStatsComponent implements OnInit {
           }
         }
       });
-    })
+    });
 
     this.stats = [
       {

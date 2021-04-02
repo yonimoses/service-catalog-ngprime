@@ -15,7 +15,7 @@ export class BreadcrumbComponent implements OnInit {
 
   ngOnInit() {
     this.nav = Array.isArray(this.nav) ? this.nav : [];
-
+// console.log('ngOnInit = ' + this.nav)
     if (this.nav.length === 0) {
       this.genBreadcrumb();
     }
@@ -27,7 +27,9 @@ export class BreadcrumbComponent implements OnInit {
 
   genBreadcrumb() {
     const routes = this.router.url.slice(1).split('/');
+    console.log(routes);
     this.nav = this.menu.getMenuLevel(routes);
     this.nav.unshift('home');
+    console.log(this.nav);
   }
 }

@@ -1,4 +1,5 @@
-<!--<breadcrumb></breadcrumb>-->
+<breadcrumb [nav]="['home', 'menu.cloudvision', 'menu.cloudvision.service-domains']"></breadcrumb>
+
 <div *ngIf="!loading" class="matero-row" fxLayout="row wrap">
 
   <ng-container   *ngFor="let stat of stats">

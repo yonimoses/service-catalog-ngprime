@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {Table} from 'primeng/table';
 import {HttpClient} from '@angular/common/http';
 import {AbstractTableDataFetcher} from '../abstract.table.data.fetcher';
-import {Server} from '../entities';
+import {CentralService, Server} from '../entities';
 import {URL_CENTRAL_SERVICES} from '../consts';
 
 // import * as data from 'customers.json';
@@ -15,7 +15,7 @@ import {URL_CENTRAL_SERVICES} from '../consts';
   selector: 'central-services-component',
   templateUrl: 'central-services.component.html',
 })
-export class CentralServicesComponent extends AbstractTableDataFetcher<Server> {
+export class CentralServicesComponent extends AbstractTableDataFetcher<CentralService> {
   constructor(httpClient: HttpClient) {
     super(httpClient);
     console.log('CentralServicesComponent ');

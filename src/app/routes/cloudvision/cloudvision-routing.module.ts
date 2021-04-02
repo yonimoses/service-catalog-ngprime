@@ -4,11 +4,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { ServersComponent } from './servers/servers.component';
 import { CapacityComponent } from './billing/capacity.component';
 import { ArisCostComponent } from './billing/aris.cost.component';
-import {ServiceDomainsComponent} from './servicedmain/service-domains.component';
-import {DomainDetailsComponent} from './servicedmain/details/domain-details.component';
-import {ServiceDomainDeploymentEnvChart} from './servicedmain/charts/service.domain.deployment.env.chart';
+import {ServiceDomainsComponent} from './service-domain/service-domains.component';
+import {DomainDetailsComponent} from './service-domain/details/domain-details.component';
+import {ServiceDomainDeploymentEnvChart} from './service-domain/charts/service.domain.deployment.env.chart';
+import {CentralServicesComponent} from './central-services/central-services.component';
 
 const routes: Routes = [
+  { path: 'central-services', component: CentralServicesComponent, data: { title: 'Central Services' } },
   { path: 'servers', component: ServersComponent, data: { title: 'Servers' } },
   { path: 'capacity', component: CapacityComponent, data: { title: 'Capacity' } },
   { path: 'capacity/cost', component: ArisCostComponent, data: { title: 'Aris Cost' } },
