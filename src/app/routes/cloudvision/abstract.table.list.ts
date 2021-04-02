@@ -69,6 +69,7 @@ export abstract class AbstractTableList<T extends TableRow> implements OnInit {
   }
 
   navChanged(obj) {
+    console.log('navChanged ' +  obj);
     switch (obj) {
       case 'prev' :
         this.prev();

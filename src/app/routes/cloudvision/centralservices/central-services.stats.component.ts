@@ -14,7 +14,7 @@ export interface ServerStats {
   selector: 'app-servers-stats-component',
   templateUrl: 'servers.stats.component.html',
 })
-export class ServersStatsComponent implements OnInit {
+export class CentralServicesStatsComponent implements OnInit {
   @Input() entities: Server[];
   @Input() loading: boolean;
   stats: ServerStats[] = [];

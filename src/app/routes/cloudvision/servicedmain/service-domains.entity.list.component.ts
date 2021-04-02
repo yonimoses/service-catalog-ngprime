@@ -5,6 +5,9 @@ import {ServiceDomain} from '../entities';
 import {ActivatedRoute, Router} from '@angular/router';
 import {MatDialog} from '@angular/material/dialog';
 import {ServiceDomainDeploymentEnvChart} from './charts/service.domain.deployment.env.chart';
+import {MatBottomSheet} from '@angular/material/bottom-sheet';
+import {NetworkPolicySheetComponent} from './row/sheets/network.policy.sheet.components';
+import {ServiceDomainParticipantsComponent} from './row/service.domain.participants.component';
 
 /**
  * @title Basic use of `<table mat-table>`
@@ -16,7 +19,7 @@ import {ServiceDomainDeploymentEnvChart} from './charts/service.domain.deploymen
 })
 export class ServiceDomainsEntityListComponent extends AbstractTableList<ServiceDomain> {
 
-  constructor(private dialog: MatDialog, httpClient: HttpClient, private router: Router, private route: ActivatedRoute) {
+  constructor(private dialog: MatDialog, httpClient: HttpClient, private bottomSheet: MatBottomSheet, private router: Router, private route: ActivatedRoute) {
     super(httpClient);
   }
 
@@ -31,7 +34,7 @@ export class ServiceDomainsEntityListComponent extends AbstractTableList<Service
   }
 
   getFilters(): string[] {
-    return ['service_domain', 'owner_email', 'owner_name', 'system_aris', 'system_name_aris'];
+    return ['domain_name', 'owner_email', 'repos','groups','owner_name', 'system_aris', 'system_name_aris'];
   }
 
   getExportedColumns(): string[] {
@@ -54,5 +57,14 @@ export class ServiceDomainsEntityListComponent extends AbstractTableList<Service
       }
     });
     // this.router.navigate(['env-chart', {domain_name: entity.domain_name}], {relativeTo: this.route});
+  }
+
+  openRolesSheet(entity) {
+    this.dialog.open(ServiceDomainParticipantsComponent, {
+      data: {
+        entity: entity,
+      }
+    });
+
   }
 }

@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { Table } from 'primeng/table';
-import { HttpClient } from '@angular/common/http';
-import { AbstractTableDataFetcher } from '../abstract.table.data.fetcher';
-import ServiceDomain from '../entities';
-import {URL_SERVER_LIST, URL_SERVER_SERVICE_DOMAIN} from '../consts';
+import {Component} from '@angular/core';
+import {Table} from 'primeng/table';
+import {HttpClient} from '@angular/common/http';
+import {AbstractTableDataFetcher} from '../abstract.table.data.fetcher';
+import {ServiceDomain} from '../entities';
+import {URL_SERVER_SERVICE_DOMAIN} from '../consts';
 
 // import * as data from 'customers.json';
 
@@ -28,5 +28,11 @@ export class ServiceDomainsComponent extends AbstractTableDataFetcher<ServiceDom
 
   public getUrl(): string {
     return URL_SERVER_SERVICE_DOMAIN;
+  }
+
+  public afterDataLoaded() {
+    // this.entities.forEach(A=>{
+    //      ServiceDomainUtils.owner(A)
+    // })
   }
 }

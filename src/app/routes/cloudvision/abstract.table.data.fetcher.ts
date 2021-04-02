@@ -8,7 +8,7 @@ import { TableRow } from './entities';
 
 @Directive()
 export abstract class AbstractTableDataFetcher<T extends TableRow> implements OnInit {
-  public entities: TableRow[];
+  public entities: T[];
   public first = 0;
   public rows = 10;
   public loading: boolean = true;
@@ -16,10 +16,11 @@ export abstract class AbstractTableDataFetcher<T extends TableRow> implements On
   constructor(private httpClient: HttpClient) {}
 
   ngOnInit() {
+    this.beforeDataLoading();
     console.log('Loading data from ' + this.getUrl());
-    this.httpClient.get<TableRow[]>(this.getUrl()).subscribe(res => {
+    this.httpClient.get<T[]>(this.getUrl()).subscribe(res => {
       this.entities = res;
-      console.log(res);
+      this.afterDataLoaded();
       this.loading = false;
     });
   }
@@ -49,4 +50,12 @@ export abstract class AbstractTableDataFetcher<T extends TableRow> implements On
   }
 
   public abstract getUrl(): string;
+
+  public beforeDataLoading() {
+
+  }
+
+  public afterDataLoaded() {
+
+  }
 }

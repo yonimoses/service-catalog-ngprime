@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {AbstractTableList} from '../abstract.table.list';
-import Server from '../entities';
+import {Server} from '../entities';
 
 // import * as data from 'customers.json';
 

@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import ArisUsageEntity from '../entities';
+import {ArisUsageEntity} from '../entities';
 import {ActivatedRoute, Router} from '@angular/router';
 import {URL_CAPACITY_ARIS_URL, URL_COST_ARIS, URL_COST_SERVICES} from '../consts';
 import {AbstractTableList} from '../abstract.table.list';

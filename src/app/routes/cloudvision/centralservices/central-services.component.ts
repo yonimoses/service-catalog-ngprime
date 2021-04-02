@@ -12,11 +12,10 @@ import {URL_SERVER_LIST} from '../consts';
  * @title Basic use of `<table mat-table>`
  */
 @Component({
-  selector: 'servers-component',
-  styleUrls: ['../table-styles.scss', 'servers.list.component.scss'],
-  templateUrl: 'servers.component.html',
+  selector: 'central-services-component',
+  templateUrl: 'central-services.component.html',
 })
-export class ServersComponent extends AbstractTableDataFetcher<Server> {
+export class CentralServicesComponent extends AbstractTableDataFetcher<Server> {
   constructor(httpClient: HttpClient) {
     super(httpClient);
     console.log('ServersComponent ');

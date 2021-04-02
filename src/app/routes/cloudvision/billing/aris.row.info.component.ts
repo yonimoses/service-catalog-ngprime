@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import ArisUsageEntity from '../entities';
+import {ArisUsageEntity} from '../entities';
 
 // import * as data from 'customers.json';
 

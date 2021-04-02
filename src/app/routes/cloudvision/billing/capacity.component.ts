@@ -4,7 +4,7 @@ import { Table } from 'primeng/table';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { AbstractTableDataFetcher } from '../abstract.table.data.fetcher';
-import ArisUsageEntity from '../entities';
+import {ArisUsageEntity} from '../entities';
 // import * as data from 'customers.json';
 
 /**

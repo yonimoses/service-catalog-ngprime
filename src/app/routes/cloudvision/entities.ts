@@ -20,6 +20,12 @@ export interface Envs {
   preprod: any[];
   staging: any[];
 }
+export interface ServiceDomainParticipant {
+  name: string;
+  username: string;
+  email?: string;
+  role: string;
+}
 
 export interface Links {
   grafana: string[];
@@ -33,7 +39,7 @@ export interface Links {
   ocp: string[];
 }
 
-export interface ServiceDomain {
+export interface ServiceDomain extends TableRow {
   domain_name: string;
   domain_repo_name: string;
   group_email: string;
@@ -42,6 +48,7 @@ export interface ServiceDomain {
   system_aris: number;
   system_name_aris: string;
   repos: string[];
+  roles: ServiceDomainParticipant[];
   groups: string[];
   source_project: string;
   source_address: string;
@@ -55,7 +62,7 @@ export interface ServiceDomain {
 }
 
 
-export default interface Server extends TableRow {
+export interface Server extends TableRow {
   hostname: string;
   ipaddress: string;
   products: string[];
@@ -81,7 +88,7 @@ export interface Usage {
   openshift_storage: number;
 }
 
-export default interface ArisUsageEntity extends TableRow {
+export  interface ArisUsageEntity extends TableRow {
   aris: string;
   name: string;
   owner_email: string;
@@ -90,7 +97,7 @@ export default interface ArisUsageEntity extends TableRow {
   usage: Usage;
 }
 
-export default interface ServicePriceUnit {
+export interface ServicePriceUnit {
   name: string;
   help: string;
   unit: number;

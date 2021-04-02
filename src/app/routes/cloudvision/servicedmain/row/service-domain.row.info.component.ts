@@ -1,9 +1,10 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {ServiceDomain} from '../../entities';
+import {ServiceDomain, ServiceDomainParticipant} from '../../entities';
 import {MatBottomSheet} from '@angular/material/bottom-sheet';
 import {NetworkPolicySheetComponent} from './sheets/network.policy.sheet.components';
 import {QuotaSheetComponent} from './sheets/quota.sheet.component';
+import {ServiceDomainUtils} from '../../consts';
 
 // import * as data from 'customers.json';
 
@@ -17,6 +18,7 @@ import {QuotaSheetComponent} from './sheets/quota.sheet.component';
 export class ServiceDomainRowInfoComponent implements OnInit {
   @Input() entity: ServiceDomain;
   @Input() loading: boolean;
+  owner: ServiceDomainParticipant;
   tabs: any[] = [
     {name: 'Details'},
     {name: 'Clusters'},
@@ -41,8 +43,7 @@ export class ServiceDomainRowInfoComponent implements OnInit {
   }
 
   ngOnInit() {
-
-
+    this.owner = ServiceDomainUtils.owner(this.entity);
   }
 
   getEnvs(entity: ServiceDomain): string[] {

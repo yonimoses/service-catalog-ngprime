@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AbstractTableList } from '../abstract.table.list';
-import ArisUsageEntity from '../entities';
+import {ArisUsageEntity} from '../entities';
 import { ActivatedRoute, Router } from '@angular/router';
-import ServicePriceUnit from '../entities';
+import {ServicePriceUnit} from '../entities';
 import { Observable } from 'rxjs';
 import { URL_COST_SERVICES } from '../consts';
 

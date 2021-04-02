@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import ArisUsageEntity from '../entities';
+import {ArisUsageEntity} from '../entities';
 
 // import * as data from 'customers.json';
 
@@ -36,7 +36,7 @@ export class ArisStatsComponent implements OnInit {
         names += entity.service_domains.names.length;
       }
       if (entity.service_domains && entity.service_domains.namespaces) {
-        namespaces+=  entity.service_domains.namespaces.length;
+        namespaces += entity.service_domains.namespaces.length;
       }
     });
 

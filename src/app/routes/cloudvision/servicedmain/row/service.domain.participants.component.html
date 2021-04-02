@@ -1,0 +1,37 @@
+<h2 mat-dialog-title>Participants in service domain  {{entity.domain_name}}</h2>
+
+<mat-dialog-content>
+  <div class="matero-row" fxLayout="row wrap">
+    <!-- Statistics -->
+    <div class="matero-col" fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100">
+      <mat-card>
+        <mat-card-subtitle>Participants</mat-card-subtitle>
+        <mat-list>
+          <mat-list-item *ngFor="let role of entity.roles">
+            <img matListAvatar [src]="'assets/images/logos/user.png'" alt="">
+            <h3 matLine> {{role.name}} </h3>
+            <p matLine>
+              <span>{{role.email}} </span>
+              <small class="text-muted entities-list-badge {{role.role}}">{{role.role.toUpperCase()}}</small>
+            </p>
+          </mat-list-item>
+        </mat-list>
+      </mat-card>
+
+
+<!--      <mat-card [ngClass]="['text-white']">-->
+<!--        <mat-card-title class="f-s-12 f-w-200">{{role.name}} ({{role.email}})</mat-card-title>-->
+<!--        <mat-card-content>-->
+<!--       -->
+<!--        </mat-card-content>-->
+<!--      </mat-card>-->
+    </div>
+  </div>
+
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-raised-button color="primary" mat-dialog-close>Close</button>
+</mat-dialog-actions>
+
+

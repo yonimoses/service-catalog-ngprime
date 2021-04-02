@@ -19,6 +19,7 @@
 
 
   <p-table #dt2 [value]="entities" dataKey="hostname"
+           [(first)]="first"
            [rows]="10"
            [showCurrentPageReport]="true"
            [rowsPerPageOptions]="[10,25,50]"

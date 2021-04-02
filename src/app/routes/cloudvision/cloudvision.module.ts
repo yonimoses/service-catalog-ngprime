@@ -41,8 +41,13 @@ import {NetworkPolicySheetComponent} from './servicedmain/row/sheets/network.pol
 import {QuotaSheetComponent} from './servicedmain/row/sheets/quota.sheet.component';
 import {ServiceDomainDeploymentEnvChart} from './servicedmain/charts/service.domain.deployment.env.chart';
 import {OrganizationChartModule} from 'primeng/organizationchart';
+import {ServiceDomainParticipantsComponent} from './servicedmain/row/service.domain.participants.component';
+import {CentralServicesStatsComponent} from './centralservices/central-services.stats.component';
+import {CentralServicesComponent} from './centralservices/central-services.component';
 
 const COMPONENTS = [
+  CentralServicesComponent,
+  CentralServicesStatsComponent,
   ServersListComponent,
   ArisCostComponent,
   DomainDetailsComponent,
@@ -65,7 +70,7 @@ const COMPONENTS = [
   ServersComponent,
   CapacityComponent,
 ];
-const COMPONENTS_DYNAMIC = [ServiceDomainDeploymentEnvChart, NetworkPolicySheetComponent, QuotaSheetComponent];
+const COMPONENTS_DYNAMIC = [ServiceDomainParticipantsComponent,ServiceDomainDeploymentEnvChart, NetworkPolicySheetComponent, QuotaSheetComponent];
 
 @NgModule({
   imports: [
