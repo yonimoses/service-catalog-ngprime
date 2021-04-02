@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { Table } from 'primeng/table';
-import { HttpClient } from '@angular/common/http';
-import { AbstractTableDataFetcher } from '../abstract.table.data.fetcher';
+import {Component} from '@angular/core';
+import {Table} from 'primeng/table';
+import {HttpClient} from '@angular/common/http';
+import {AbstractTableDataFetcher} from '../abstract.table.data.fetcher';
 import {Server} from '../entities';
-import {URL_SERVER_LIST} from '../consts';
+import {URL_CENTRAL_SERVICES} from '../consts';
 
 // import * as data from 'customers.json';
 
@@ -18,7 +18,7 @@ import {URL_SERVER_LIST} from '../consts';
 export class CentralServicesComponent extends AbstractTableDataFetcher<Server> {
   constructor(httpClient: HttpClient) {
     super(httpClient);
-    console.log('ServersComponent ');
+    console.log('CentralServicesComponent ');
   }
 
   clear(table: Table) {
@@ -26,6 +26,6 @@ export class CentralServicesComponent extends AbstractTableDataFetcher<Server> {
   }
 
   public getUrl(): string {
-    return URL_SERVER_LIST;
+    return URL_CENTRAL_SERVICES;
   }
 }

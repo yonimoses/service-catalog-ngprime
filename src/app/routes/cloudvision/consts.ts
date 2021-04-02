@@ -6,6 +6,7 @@ export const URL_COST_SERVICES = 'http://localhost:8080/cost/services';
 export const URL_COST_ARIS = 'http://localhost:8080/cost/aris/';
 export const URL_SERVICE_DOMAIN_NETWORK = 'http://localhost:8080/service-domain/network/';
 export const URL_SERVICE_DOMAIN_QUOTA = 'http://localhost:8080/service-domain/quota/';
+export const URL_CENTRAL_SERVICES = 'http://localhost:8080/central-services/list';
 export const URL_SERVER_LIST = 'http://localhost:8080/server/list';
 export const URL_SERVER_SERVICE_DOMAIN = 'http://localhost:8080/service-domain/list';
 

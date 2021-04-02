@@ -8,6 +8,7 @@ import {ServiceDomainDeploymentEnvChart} from './charts/service.domain.deploymen
 import {MatBottomSheet} from '@angular/material/bottom-sheet';
 import {NetworkPolicySheetComponent} from './row/sheets/network.policy.sheet.components';
 import {ServiceDomainParticipantsComponent} from './row/service.domain.participants.component';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 /**
  * @title Basic use of `<table mat-table>`
@@ -19,7 +20,7 @@ import {ServiceDomainParticipantsComponent} from './row/service.domain.participa
 })
 export class ServiceDomainsEntityListComponent extends AbstractTableList<ServiceDomain> {
 
-  constructor(private dialog: MatDialog, httpClient: HttpClient, private bottomSheet: MatBottomSheet, private router: Router, private route: ActivatedRoute) {
+  constructor(private dialog: MatDialog, httpClient: HttpClient, private bottomSheet: MatBottomSheet, private router: Router, private snackBar: MatSnackBar,private route: ActivatedRoute) {
     super(httpClient);
   }
 
@@ -57,6 +58,10 @@ export class ServiceDomainsEntityListComponent extends AbstractTableList<Service
       }
     });
     // this.router.navigate(['env-chart', {domain_name: entity.domain_name}], {relativeTo: this.route});
+  }
+  generateGrafanaDashboard(entity) {
+    this.snackBar.open('not implemented yet', '', { duration: 2000 });
+
   }
 
   openRolesSheet(entity) {

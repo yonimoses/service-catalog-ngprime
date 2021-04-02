@@ -42,8 +42,8 @@ import {QuotaSheetComponent} from './servicedmain/row/sheets/quota.sheet.compone
 import {ServiceDomainDeploymentEnvChart} from './servicedmain/charts/service.domain.deployment.env.chart';
 import {OrganizationChartModule} from 'primeng/organizationchart';
 import {ServiceDomainParticipantsComponent} from './servicedmain/row/service.domain.participants.component';
-import {CentralServicesStatsComponent} from './centralservices/central-services.stats.component';
-import {CentralServicesComponent} from './centralservices/central-services.component';
+import {CentralServicesStatsComponent} from './central-services/central-services.stats.component';
+import {CentralServicesComponent} from './central-services/central-services.component';
 
 const COMPONENTS = [
   CentralServicesComponent,

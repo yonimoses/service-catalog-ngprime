@@ -115,6 +115,15 @@
                   class="p-button-text p-button-rounded text-white p-button-plain"
                   [icon]="'pi pi-map'"></button>
 
+          <!--
+            @TODO - yoni moses - enable only for admin group
+          -->
+          <button type="button" pButton pRipple
+                  (click)="generateGrafanaDashboard(entity)"
+                  [matTooltip]="'Generate Dashboard'"
+                  class="p-button-text p-button-rounded text-white p-button-plain"
+                  [icon]="'pi pi-chart-bar'"></button>
+
         </td>
       </tr>
     </ng-template>
