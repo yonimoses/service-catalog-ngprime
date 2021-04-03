@@ -5,17 +5,19 @@
 
   <p-toolbar styleClass="p-mb-4">
     <ng-template pTemplate="left">
-      <button matRipple mat-button color="accent"
-              (click)="newServer()">
-         <mat-icon>add</mat-icon>New
-        </button>
-<!--      <button pButton pRipple label="New" icon="pi pi-plus" class="p-button-success p-mr-2" (click)="newServer()"  ></button>-->
+      <button matRipple mat-button color="accent" (click)="newServer()">
+        <mat-icon>add</mat-icon>New
+      </button>
+      <button matRipple mat-button color="accent" (click)="openPlot()">
+        <mat-icon>pie_chart</mat-icon>Plot
+      </button>
+      <!--      <button pButton pRipple label="New" icon="pi pi-plus" class="p-button-success p-mr-2" (click)="newServer()"  ></button>-->
       <!--      <button pButton pRipple [label]="Delete" icon="pi pi-trash" class="p-button-danger" (click)="deleteSelectedProducts()" [disabled]="!selectedProducts || !selectedProducts.length"></button>-->
     </ng-template>
 
     <ng-template pTemplate="right">
-<!--      <button type="button" pButton pRipple icon="pi pi-chart-bar"  (click)="()" class="p-mr-2" pTooltip="Blackbox Dashboard"-->
-<!--              tooltipPosition="bottom"></button> &nbsp;-->
+      <!--      <button type="button" pButton pRipple icon="pi pi-chart-bar"  (click)="()" class="p-mr-2" pTooltip="Blackbox Dashboard"-->
+      <!--              tooltipPosition="bottom"></button> &nbsp;-->
       <!--        <button type="button" pButton pRipple icon="pi pi-file-excel" (click)="exportExcel()"-->
       <!--                class="p-button-success p-mr-2"  pTooltip="Export to XLS" tooltipPosition="bottom"></button> &nbsp;-->
     </ng-template>
@@ -83,8 +85,8 @@
       </tr>
     </ng-template>
     <!-- @TODO add cpu/mem/storage summary for the selected entitys -->
-<!--    <ng-template pTemplate="summary">-->
-<!--      found {{entities?.length}} entities-->
-<!--    </ng-template>-->
+    <!--    <ng-template pTemplate="summary">-->
+    <!--      found {{entities?.length}} entities-->
+    <!--    </ng-template>-->
   </p-table>
 </div>

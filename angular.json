@@ -17,22 +17,28 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "allowedCommonJsDependencies": ["@angularclass/hmr"],
+            "allowedCommonJsDependencies": [
+              "@angularclass/hmr"
+            ],
             "aot": true,
             "outputPath": "dist/ng-matero",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "assets": ["src/favicon.ico", "src/assets"],
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
             "styles": [
               "node_modules/primeicons/primeicons.css",
               "node_modules/primeng/resources/themes/bootstrap4-dark-blue/theme.css",
               "node_modules/primeng/resources/primeng.min.css",
               "src/styles.scss"
             ],
-
-            "scripts": ["node_modules/apexcharts/dist/apexcharts.min.js"]
+            "scripts": [
+              "node_modules/apexcharts/dist/apexcharts.min.js",
+            ]
           },
           "configurations": {
             "production": {
@@ -111,16 +117,28 @@
               "node_modules/primeicons/primeicons.css",
               "node_modules/primeng/resources/themes/bootstrap4-dark-blue/theme.css",
               "node_modules/primeng/resources/primeng.min.css",
-            "src/styles.scss"],
-            "scripts": ["node_modules/apexcharts/dist/apexcharts.min.js"],
-            "assets": ["src/favicon.ico", "src/assets"]
+              "src/styles.scss"
+            ],
+            "scripts": [
+              "node_modules/apexcharts/dist/apexcharts.min.js",
+            ],
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["tsconfig.app.json", "tsconfig.spec.json", "e2e/tsconfig.json"],
-            "exclude": ["**/node_modules/**"]
+            "tsConfig": [
+              "tsconfig.app.json",
+              "tsconfig.spec.json",
+              "e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         },
         "e2e": {

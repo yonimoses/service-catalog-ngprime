@@ -33,9 +33,9 @@ export class ServersStatsComponent implements OnInit {
     let storage = 0;
 
     this.entities.forEach(a => {
-      cpu += a.cpu;
-      mem += a.mem;
-      storage += a.storage;
+      cpu += Number.parseFloat(a.cpu + '');
+      mem += Number.parseFloat(a.mem + '');
+      storage += Number.parseFloat(a.storage + '');
     });
 
     this.stats = [

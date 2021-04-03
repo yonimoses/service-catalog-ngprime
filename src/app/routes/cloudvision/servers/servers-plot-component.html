@@ -1,0 +1,20 @@
+<h2 mat-dialog-title>Servers</h2>
+
+<mat-dialog-content>
+
+  <div class="row">
+    <apx-chart
+      [series]="chartOptions.series"
+      [chart]="chartOptions.chart"
+      [labels]="chartOptions.labels"
+      [fill]="chartOptions.fill"
+      [stroke]="chartOptions.stroke"
+      [responsive]="chartOptions.responsive"
+    ></apx-chart>
+  </div>
+
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-raised-button mat-dialog-close>Close</button>
+</mat-dialog-actions>

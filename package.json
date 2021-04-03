@@ -55,6 +55,7 @@
     "jspdf-autotable": "^3.5.14",
     "moment": "^2.29.1",
     "moment-timezone": "^0.5.32",
+    "ng-apexcharts": "^1.5.9",
     "ngx-permissions": "^8.1.1",
     "ngx-progressbar": "^6.1.0",
     "ngx-toastr": "^13.2.0",

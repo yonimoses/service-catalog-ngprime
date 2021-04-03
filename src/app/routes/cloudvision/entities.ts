@@ -72,6 +72,7 @@ export interface ServiceDomain extends TableRow {
 
 export interface Server extends TableRow {
   hostname: string;
+  group: string;
   ipaddress: string;
   products: string[];
   dns: string;

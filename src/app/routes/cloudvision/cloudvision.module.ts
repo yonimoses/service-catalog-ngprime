@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {SharedModule} from '@shared/shared.module';
-import {AddNewServerFormComponent, ServersListComponent} from './servers/servers.list.component';
+import {AddNewServerFormComponent, ServersListComponent, ServersPlotComponent} from './servers/servers.list.component';
 import {CloudvisionRoutingModule} from './cloudvision-routing.module';
 import {ChipsModule} from 'primeng/chips';
 import {TableModule} from 'primeng/table';
@@ -45,6 +45,8 @@ import {ServiceDomainParticipantsComponent} from './service-domain/row/service.d
 import {CentralServicesStatsComponent} from './central-services/central-services.stats.component';
 import {CentralServicesComponent} from './central-services/central-services.component';
 import {CentralServicesListComponent} from './central-services/central-services.list.component';
+import {ChartModule} from 'primeng/chart';
+import {NgApexchartsModule} from 'ng-apexcharts';
 
 const COMPONENTS = [
   CentralServicesComponent,
@@ -72,7 +74,7 @@ const COMPONENTS = [
   ServersComponent,
   CapacityComponent,
 ];
-const COMPONENTS_DYNAMIC = [AddNewServerFormComponent,ServiceDomainParticipantsComponent,ServiceDomainDeploymentEnvChart, NetworkPolicySheetComponent, QuotaSheetComponent];
+const COMPONENTS_DYNAMIC = [ServersPlotComponent,AddNewServerFormComponent,ServiceDomainParticipantsComponent,ServiceDomainDeploymentEnvChart, NetworkPolicySheetComponent, QuotaSheetComponent];
 
 @NgModule({
   imports: [
@@ -94,6 +96,7 @@ const COMPONENTS_DYNAMIC = [AddNewServerFormComponent,ServiceDomainParticipantsC
     TagModule,
     OverlayPanelModule,
     OrganizationChartModule,
+    NgApexchartsModule
   ],
   declarations: [...COMPONENTS, ...COMPONENTS_DYNAMIC],
   entryComponents: COMPONENTS_DYNAMIC,
