@@ -20,7 +20,8 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 })
 export class ServiceDomainsEntityListComponent extends AbstractTableList<ServiceDomain> {
 
-  constructor(private dialog: MatDialog, httpClient: HttpClient, private bottomSheet: MatBottomSheet, private router: Router, private snackBar: MatSnackBar,private route: ActivatedRoute) {
+  constructor(private dialog: MatDialog, httpClient: HttpClient,
+              private bottomSheet: MatBottomSheet, private router: Router, private snackBar: MatSnackBar,private route: ActivatedRoute) {
     super(httpClient);
   }
 
@@ -60,6 +61,9 @@ export class ServiceDomainsEntityListComponent extends AbstractTableList<Service
     // this.router.navigate(['env-chart', {domain_name: entity.domain_name}], {relativeTo: this.route});
   }
   generateGrafanaDashboard(entity) {
+    /**
+     * @todo yoni, redirect with _blank
+     */
     this.snackBar.open('not implemented yet', '', { duration: 2000 });
 
   }

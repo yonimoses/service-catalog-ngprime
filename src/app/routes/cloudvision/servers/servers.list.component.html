@@ -3,19 +3,23 @@
 </div>
 <div class="card">
 
-  <!--  <p-toolbar styleClass="p-mb-4">-->
-  <!--    <ng-template pTemplate="left">-->
-  <!--&lt;!&ndash;      <button pButton pRipple label="New" icon="pi pi-plus" class="p-button-success p-mr-2" (click)="openNew()"></button>&ndash;&gt;-->
-  <!--&lt;!&ndash;      <button pButton pRipple [label]="Delete" icon="pi pi-trash" class="p-button-danger" (click)="deleteSelectedProducts()" [disabled]="!selectedProducts || !selectedProducts.length"></button>&ndash;&gt;-->
-  <!--    </ng-template>-->
+  <p-toolbar styleClass="p-mb-4">
+    <ng-template pTemplate="left">
+      <button matRipple mat-button color="accent"
+              (click)="newServer()">
+         <mat-icon>add</mat-icon>New
+        </button>
+<!--      <button pButton pRipple label="New" icon="pi pi-plus" class="p-button-success p-mr-2" (click)="newServer()"  ></button>-->
+      <!--      <button pButton pRipple [label]="Delete" icon="pi pi-trash" class="p-button-danger" (click)="deleteSelectedProducts()" [disabled]="!selectedProducts || !selectedProducts.length"></button>-->
+    </ng-template>
 
-  <!--    <ng-template pTemplate="right">-->
-  <!--      <button type="button" pButton pRipple icon="pi pi-file-o"  (click)="dt2.exportCSV()" class="p-mr-2" pTooltip="Export to CSV"-->
-  <!--              tooltipPosition="bottom"></button> &nbsp;-->
-  <!--      <button type="button" pButton pRipple icon="pi pi-file-excel" (click)="exportExcel()"-->
-  <!--              class="p-button-success p-mr-2"  pTooltip="Export to XLS" tooltipPosition="bottom"></button> &nbsp;-->
-  <!--    </ng-template>-->
-  <!--  </p-toolbar>-->
+    <ng-template pTemplate="right">
+<!--      <button type="button" pButton pRipple icon="pi pi-chart-bar"  (click)="()" class="p-mr-2" pTooltip="Blackbox Dashboard"-->
+<!--              tooltipPosition="bottom"></button> &nbsp;-->
+      <!--        <button type="button" pButton pRipple icon="pi pi-file-excel" (click)="exportExcel()"-->
+      <!--                class="p-button-success p-mr-2"  pTooltip="Export to XLS" tooltipPosition="bottom"></button> &nbsp;-->
+    </ng-template>
+  </p-toolbar>
 
 
   <p-table #dt2 [value]="entities" dataKey="hostname"

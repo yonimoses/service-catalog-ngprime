@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {AbstractTableList} from '../abstract.table.list';
 import {CentralService} from '../entities';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 // import * as data from 'customers.json';
 
@@ -17,7 +18,7 @@ export class CentralServicesListComponent extends AbstractTableList<CentralServi
   mem = 0;
   storage = 0;
 
-  constructor(httpClient: HttpClient) {
+  constructor(httpClient: HttpClient, private snackBar: MatSnackBar) {
     super(httpClient);
   }
 
@@ -36,5 +37,12 @@ export class CentralServicesListComponent extends AbstractTableList<CentralServi
   }
 
 
+  goToBlackboxDashboard() {
 
+    /**
+     * @todo yoni, redirect with _blank
+     */
+    this.snackBar.open('Not implemented yet', '', { duration: 2000 });
+
+  }
 }
