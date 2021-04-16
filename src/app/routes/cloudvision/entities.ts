@@ -10,10 +10,12 @@ export interface NetworkConnection {
 
 export interface CentralService {
   dns: string;
-  port: number;
-  env: string;
+  id: string;
   name: string;
-  address: string;
+  port: number;
+  environment: string;
+  ips: string;
+  description: string;
 }
 export interface Quota {
   cpu: string;

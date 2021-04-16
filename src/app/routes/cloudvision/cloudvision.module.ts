@@ -47,8 +47,20 @@ import {CentralServicesComponent} from './central-services/central-services.comp
 import {CentralServicesListComponent} from './central-services/central-services.list.component';
 import {ChartModule} from 'primeng/chart';
 import {NgApexchartsModule} from 'ng-apexcharts';
+import {EventsComponent} from './events/events.component';
+import {EventsListComponent} from './events/events.list.component';
+import {NgxJsonViewerModule} from 'ngx-json-viewer';
+import {DialogModule} from 'primeng/dialog';
+import {KindPipe, PrettyDateDiff} from './events/event.pipes';
+import {SnykSummaryReportComponent} from './security/snyk.summary.report.component';
+import {SecurityDashboardComponent} from './security/security.dashboard.component';
+import {CheckmarxSummaryReportComponent} from './security/checkmarx.summary.report.component';
+import {SecurityNoDataComponent} from './security/security.no.data.component';
+import {SecurityReportToolbarComponent} from './security/security.report.toolbar.component';
 
 const COMPONENTS = [
+  SecurityNoDataComponent, SecurityReportToolbarComponent,SecurityDashboardComponent,CheckmarxSummaryReportComponent,SnykSummaryReportComponent,
+  EventsComponent,EventsListComponent,
   CentralServicesComponent,
   CentralServicesListComponent,
   CentralServicesStatsComponent,
@@ -74,11 +86,14 @@ const COMPONENTS = [
   ServersComponent,
   CapacityComponent,
 ];
-const COMPONENTS_DYNAMIC = [ServersPlotComponent,AddNewServerFormComponent,ServiceDomainParticipantsComponent,ServiceDomainDeploymentEnvChart, NetworkPolicySheetComponent, QuotaSheetComponent];
+const COMPONENTS_DYNAMIC = [
+  ServersPlotComponent,AddNewServerFormComponent,
+  ServiceDomainParticipantsComponent,ServiceDomainDeploymentEnvChart, NetworkPolicySheetComponent, QuotaSheetComponent];
 
 @NgModule({
   imports: [
     SharedModule,
+    NgxJsonViewerModule,
     CloudvisionRoutingModule,
     ChipsModule,
     TableModule,
@@ -96,10 +111,14 @@ const COMPONENTS_DYNAMIC = [ServersPlotComponent,AddNewServerFormComponent,Servi
     TagModule,
     OverlayPanelModule,
     OrganizationChartModule,
-    NgApexchartsModule
+    NgApexchartsModule,
+    DialogModule
   ],
-  declarations: [...COMPONENTS, ...COMPONENTS_DYNAMIC],
+  declarations: [...COMPONENTS, ...COMPONENTS_DYNAMIC,PrettyDateDiff,KindPipe],
   entryComponents: COMPONENTS_DYNAMIC,
+  exports: [
+    TableCaptionComponent
+  ]
 })
 export class CloudvisionModule {
 }

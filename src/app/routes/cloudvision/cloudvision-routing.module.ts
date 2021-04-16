@@ -8,9 +8,13 @@ import {ServiceDomainsComponent} from './service-domain/service-domains.componen
 import {DomainDetailsComponent} from './service-domain/details/domain-details.component';
 import {ServiceDomainDeploymentEnvChart} from './service-domain/charts/service.domain.deployment.env.chart';
 import {CentralServicesComponent} from './central-services/central-services.component';
+import {EventsComponent} from './events/events.component';
+import {SecurityDashboardComponent} from './security/security.dashboard.component';
 
 const routes: Routes = [
+  { path: 'security', component: SecurityDashboardComponent, data: { title: 'asdasd' } },
   { path: 'central-services', component: CentralServicesComponent, data: { title: 'Central Services' } },
+  { path: 'events', component: EventsComponent, data: { title: 'Servers' } },
   { path: 'servers', component: ServersComponent, data: { title: 'Servers' } },
   { path: 'capacity', component: CapacityComponent, data: { title: 'Capacity' } },
   { path: 'capacity/cost', component: ArisCostComponent, data: { title: 'Aris Cost' } },

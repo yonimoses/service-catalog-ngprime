@@ -1,0 +1,19 @@
+<breadcrumb></breadcrumb>
+<style>
+  .p-sortable-column:hover {
+    background: none !important;
+  }
+</style>
+
+
+<div class="matero-row" fxLayout="row wrap">
+  <!-- Statistics -->
+  <div class="matero-col" fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100">
+    <snyk-summary [entity]="entity"></snyk-summary>
+  </div>
+  <div class="matero-col" fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100">
+    <checkmarx-summary [entity]="entity"></checkmarx-summary>
+  </div>
+
+</div>
+<!--  </div>-->

@@ -1,0 +1,18 @@
+<style>
+
+</style>
+
+<p-toolbar styleClass="p-mb-4 no-border" style="border: none  !important;">
+    <ng-template pTemplate="left">
+      <h4 class="text-upper"> Security report for {{summary.service}}</h4>
+      <!--      <button pButton pRipple label="New" icon="pi pi-plus" class="p-button-success p-mr-2" (click)="newServer()"  ></button>-->
+      <!--      <button pButton pRipple [label]="Delete" icon="pi pi-trash" class="p-button-danger" (click)="deleteSelectedProducts()" [disabled]="!selectedProducts || !selectedProducts.length"></button>-->
+    </ng-template>
+
+    <ng-template pTemplate="right">
+      <button type="button" pButton pRipple icon="pi pi-chart-bar"  class="p-mr-2" pTooltip="DUMMY"
+              tooltipPosition="bottom"></button> &nbsp;
+      <!--        <button type="button" pButton pRipple icon="pi pi-file-excel" (click)="exportExcel()"-->
+      <!--                class="p-button-success p-mr-2"  pTooltip="Export to XLS" tooltipPosition="bottom"></button> &nbsp;-->
+    </ng-template>
+  </p-toolbar>

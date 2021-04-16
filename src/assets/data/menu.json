@@ -38,7 +38,18 @@
           "route": "central-services",
           "name": "central-services",
           "type": "link"
-        }, {
+        },
+        {
+          "route": "events",
+          "name": "events",
+          "type": "link"
+        },
+        {
+          "route": "security",
+          "name": "security",
+          "type": "link"
+        },
+        {
           "route": "servers",
           "name": "servers",
           "type": "link"

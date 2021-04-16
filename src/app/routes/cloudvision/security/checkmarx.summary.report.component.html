@@ -1,0 +1,48 @@
+
+<div class="matero-row" fxLayout="row wrap">
+
+  <div class="matero-col" style="text-align: center" fxFlex.gt-sm="100"  fxFlex.gt-lg="100" fxFlex.gt-xs="100"  fxFlex="100">
+    <h4>snyk summary report</h4>
+  </div>
+  <ng-container *ngIf="loading; else loaded">
+    <div class="matero-col" style="text-align: center" fxFlex.gt-sm="100"  fxFlex.gt-lg="100" fxFlex.gt-xs="100"  fxFlex="100">
+      <p-progressSpinner></p-progressSpinner>
+    </div>
+  </ng-container>
+  <ng-template #loaded>
+    <ng-container *ngIf="!summary.error; else error_summary">
+      <div class="matero-col" *ngFor="let stat of stats"  fxFlex.gt-sm="33"  fxFlex.gt-lg="33" fxFlex.gt-xs="33"  fxFlex="100">
+        <mat-card [ngClass]="['text-white',stat.color]">
+          <mat-card-title>{{stat.type}}</mat-card-title>
+          <mat-card-content>
+            <h2>{{stat.total}}</h2>
+            <small class="text-muted">still thinking how to model it</small>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+    </ng-container>
+    <ng-template #error_summary>
+      <security-no-data-component [summary]="summary"></security-no-data-component>
+    </ng-template>
+  </ng-template>
+
+
+</div>
+
+<!--<div class="SNYK">-->
+<!--  <div class="snyk-high">-->
+<!-- -->
+<!--  </div>-->
+<!--  <div class="snyk-medium">-->
+<!--    <mat-card [ngClass]="['text-white','bg-orange-500']">-->
+<!--      <mat-card-content>-->
+<!--        <h2>33</h2>-->
+<!--        <small class="text-muted">Monthly</small>-->
+<!--      </mat-card-content>-->
+<!--    </mat-card>-->
+<!--  </div>-->
+<!--  <div class="snyk-low">snyk low</div>-->
+<!--  <div class="snyk-links">links</div>-->
+<!--  <div class="snyk-info">info</div>-->
+<!--</div>-->

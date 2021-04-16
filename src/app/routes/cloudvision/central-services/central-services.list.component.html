@@ -10,15 +10,16 @@
       </ng-template>
 
       <ng-template pTemplate="right">
-        <button type="button" pButton pRipple icon="pi pi-chart-bar"  (click)="goToBlackboxDashboard()" class="p-mr-2" pTooltip="Blackbox Dashboard"
+        <button type="button" pButton icon="pi pi-chart-bar"  (click)="goToBlackboxDashboard()" class="p-button-success p-button-outlined p-mr-2" pTooltip="Blackbox Dashboard"
                 tooltipPosition="bottom"></button> &nbsp;
-<!--        <button type="button" pButton pRipple icon="pi pi-file-excel" (click)="exportExcel()"-->
-<!--                class="p-button-success p-mr-2"  pTooltip="Export to XLS" tooltipPosition="bottom"></button> &nbsp;-->
+
+        <button pButton type="button" label="Git Repo" (click)="goToRepo()"  class="p-button-success p-button-outlined"></button>
+
       </ng-template>
     </p-toolbar>
 
 
-  <p-table #dt2 [value]="entities" dataKey="dns"
+  <p-table #dt2 [value]="entities" dataKey="id"
            [(first)]="first"
            [rows]="10"
            [showCurrentPageReport]="true"
@@ -39,17 +40,18 @@
 
     <ng-template pTemplate="header">
       <tr class="text-upper">
-        <th pSortableColumn="env">ENV
-          <p-sortIcon field="env"></p-sortIcon>
-        </th>
+
         <th pSortableColumn="name">NAME
           <p-sortIcon field="name"></p-sortIcon>
         </th>
-        <th pSortableColumn="dns">DNS
-          <p-sortIcon field="dns"></p-sortIcon>
+        <th pSortableColumn="description">Description
+          <p-sortIcon field="description"></p-sortIcon>
         </th>
-        <th pSortableColumn="address">ADDRESS
-          <p-sortIcon field="address"></p-sortIcon>
+        <th pSortableColumn="environment">Env
+          <p-sortIcon field="environment"></p-sortIcon>
+        </th>
+        <th pSortableColumn="ips">ips
+          <p-sortIcon field="ips"></p-sortIcon>
         </th>
         <th pSortableColumn="port">PORT
           <p-sortIcon field="port"></p-sortIcon>
@@ -58,10 +60,10 @@
     </ng-template>
     <ng-template pTemplate="body" let-entity>
       <tr>
-        <td><span class="entities-list-badge" [ngClass]="entity.env">{{entity.env.toUpperCase()}}</span></td>
         <td>{{entity.name}}</td>
-        <td>{{entity.dns}}</td>
-        <td>{{entity.address}}</td>
+        <td>{{entity.description}}</td>
+        <td><span class="entities-list-badge" [ngClass]="entity.environment">{{entity.environment.toUpperCase()}}</span></td>
+        <td>{{entity.ips}}</td>
         <td>{{entity.port}}</td>
       </tr>
     </ng-template>

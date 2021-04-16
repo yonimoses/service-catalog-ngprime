@@ -10,16 +10,48 @@ export interface ServerStats {
   color;
 }
 
+enum Env {
+  dev = 'dev',
+  staging = 'staging',
+  preprod = 'preprod',
+  prod = 'prod',
+}
+
+enum EnvColors {
+  dev = 'red',
+  staging = 'orange',
+  preprod = 'blue',
+  prod = 'green',
+}
+
 @Component({
   selector: 'app-central-services-stats-component',
   templateUrl: 'central-services.stats.component.html',
+  styles: [
+      `
+      .bg-blue-600 {
+        background: #689F38;
+      }
+
+
+    `,
+  ],
 })
 export class CentralServicesStatsComponent implements OnInit {
   @Input() entities: CentralService[];
   @Input() loading: boolean;
-  stats: ServerStats[] = [];
+  stats: Map<string, ServerStats> = new Map();
+  statsValues: ServerStats[] = [];
 
   constructor(private httpClient: HttpClient) {
+
+    for (const value in Env) {
+      this.stats.set(value, {
+        env: value,
+        total: 0,
+        color: EnvColors[value]
+      });
+    }
   }
 
   ngOnInit() {
@@ -28,45 +60,16 @@ export class CentralServicesStatsComponent implements OnInit {
     let staging = 0;
     let preprod = 0;
     let prod = 0;
+
     this.entities.forEach(cs => {
-      if (cs.env.indexOf('dev') > -1) {
-        dev++;
-      } else {
-        if (cs.env.indexOf('staging') > -1) {
-          staging++;
-        } else {
-          if (cs.env.indexOf('preprod') > -1) {
-            preprod++;
-          } else {
-            if (cs.env.indexOf('prod') > -1) {
-              prod++;
-            } else {
-              console.log(cs.env + ' is invalid - Couldn\'nt find any env for it.');
-            }
-          }
-        }
-      }
+      let s = this.stats.get(cs.environment);
+      s.total = s.total + 1;
+      this.stats.set(cs.environment, s);
     });
 
-    this.stats = [
-      {
-        env: 'dev',
-        total: dev,
-        color: 'bg-red-500'
-      }, {
-        env: 'staging',
-        total: staging,
-        color: 'bg-orange-500'
-      }, {
-        env: 'preprod',
-        total: preprod,
-        color: 'bg-blue-500'
-      }, {
-        env: 'prod',
-        total: prod,
-        color: 'bg-green-500'
-      }
-    ];
+  //  this.statsValues =  Array.from(this.stats.values());
+
+
     // console.log(this.servers.reduce((server, currentValue) => server.cpu + currentValue.cpu))
   }
 }

@@ -67,6 +67,11 @@
   background: #424242;
 }
 
+.p-dialog .p-dialog-header .p-dialog-content{
+  //border: 1px solid #838d9a;
+  background: #424242 !important;
+}
+
 .p-datatable .p-datatable-header {
   background: #424242 !important;
 }
@@ -111,6 +116,10 @@
 
 .entities-list-badge.storage {
   background: #FF9800;
+}
+
+.segment-main .segment-key{
+  color: #d6c7c7 !important;
 }
 
 

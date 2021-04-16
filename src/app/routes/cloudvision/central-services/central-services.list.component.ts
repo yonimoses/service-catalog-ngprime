@@ -29,19 +29,23 @@ export class CentralServicesListComponent extends AbstractTableList<CentralServi
   }
 
   getFilters() {
-    return ['dns', 'name', 'env','port','address'];
+    return ['ips', 'name', 'environment','port'];
   }
 
   getExportedColumns(): string[] {
-    return ['dns', 'name', 'env','port','address'];
+    return ['ips', 'name', 'environment','port'];
   }
 
 
   goToBlackboxDashboard() {
-
     /**
      * @todo yoni, redirect with _blank
      */
+    this.snackBar.open('Not implemented yet', '', { duration: 2000 });
+
+  }
+
+  goToRepo() {
     this.snackBar.open('Not implemented yet', '', { duration: 2000 });
 
   }
