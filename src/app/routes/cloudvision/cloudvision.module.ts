@@ -57,8 +57,10 @@ import {SecurityDashboardComponent} from './security/security.dashboard.componen
 import {CheckmarxSummaryReportComponent} from './security/checkmarx.summary.report.component';
 import {SecurityNoDataComponent} from './security/security.no.data.component';
 import {SecurityReportToolbarComponent} from './security/security.report.toolbar.component';
+import {AquaSummaryReportComponent} from './security/aqua.summary.report.component';
 
 const COMPONENTS = [
+  AquaSummaryReportComponent,
   SecurityNoDataComponent, SecurityReportToolbarComponent,SecurityDashboardComponent,CheckmarxSummaryReportComponent,SnykSummaryReportComponent,
   EventsComponent,EventsListComponent,
   CentralServicesComponent,

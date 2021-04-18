@@ -1,52 +1,52 @@
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  gap: 0px 0px;
-  grid-template-areas:
-    "SNYK SNYK SNYK SNYK"
-    "CHECKMARX CHECKMARX CHECKMARX CHECKMARX"
-    ". . . .";
-}
-
-.SNYK {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap: 0px 0px;
-  grid-template-areas:
-    "snyk-high snyk-medium snyk-low"
-    "snyk-links snyk-info snyk-info";
-  grid-area: SNYK;
-}
-
-.snyk-high { grid-area: snyk-high; }
-
-.snyk-medium { grid-area: snyk-medium; }
-
-.snyk-low { grid-area: snyk-low; }
-
-.snyk-links { grid-area: snyk-links; }
-
-.snyk-info { grid-area: snyk-info; }
-
-.CHECKMARX {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap: 0px 0px;
-  grid-template-areas:
-    "checkmarx-high checkmarx-medium checkmarx-low"
-    "checkmarx-links checkmarx-info checkmarx-info";
-  grid-area: CHECKMARX;
-}
-
-.checkmarx-medium { grid-area: checkmarx-medium; }
-
-.checkmarx-low { grid-area: checkmarx-low; }
-
-.checkmarx-high { grid-area: checkmarx-high; }
-
-.checkmarx-links { grid-area: checkmarx-links; }
-
-.checkmarx-info { grid-area: checkmarx-info; }
+//.grid-container {
+//  display: grid;
+//  grid-template-columns: repeat(4, 1fr);
+//  grid-template-rows: repeat(3, 1fr);
+//  gap: 0px 0px;
+//  grid-template-areas:
+//    "SNYK SNYK SNYK SNYK"
+//    "CHECKMARX CHECKMARX CHECKMARX CHECKMARX"
+//    ". . . .";
+//}
+//
+//.SNYK {
+//  display: grid;
+//  grid-template-columns: repeat(3, 1fr);
+//  grid-template-rows: repeat(2, 1fr);
+//  gap: 0px 0px;
+//  grid-template-areas:
+//    "snyk-high snyk-medium snyk-low"
+//    "snyk-links snyk-info snyk-info";
+//  grid-area: SNYK;
+//}
+//
+//.snyk-high { grid-area: snyk-high; }
+//
+//.snyk-medium { grid-area: snyk-medium; }
+//
+//.snyk-low { grid-area: snyk-low; }
+//
+//.snyk-links { grid-area: snyk-links; }
+//
+//.snyk-info { grid-area: snyk-info; }
+//
+//.CHECKMARX {
+//  display: grid;
+//  grid-template-columns: repeat(3, 1fr);
+//  grid-template-rows: repeat(2, 1fr);
+//  gap: 0px 0px;
+//  grid-template-areas:
+//    "checkmarx-high checkmarx-medium checkmarx-low"
+//    "checkmarx-links checkmarx-info checkmarx-info";
+//  grid-area: CHECKMARX;
+//}
+//
+//.checkmarx-medium { grid-area: checkmarx-medium; }
+//
+//.checkmarx-low { grid-area: checkmarx-low; }
+//
+//.checkmarx-high { grid-area: checkmarx-high; }
+//
+//.checkmarx-links { grid-area: checkmarx-links; }
+//
+//.checkmarx-info { grid-area: checkmarx-info; }

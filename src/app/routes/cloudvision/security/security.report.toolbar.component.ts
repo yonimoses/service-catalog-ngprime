@@ -12,7 +12,7 @@ import {ReportSummary} from './security.summary.report.component';
   selector: 'security-report-toolbar',
   styles: [
     `
-      .no-border{
+      div.p-toolbar{
         border:none !important;
       }
     `,
